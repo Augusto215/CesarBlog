@@ -1,0 +1,170 @@
+@media(max-width:60rem) {
+    
+
+    nav .cesar
+    {
+        font-size:1.3em;
+        font-family: 'American Typewriter', sans-serif !important;
+        font-weight: 500;
+        letter-spacing: .1em;
+    }
+    .cesar img
+    {
+        height:2rem;
+    }
+    nav label
+{
+  display: flex;
+  width:100%;
+  justify-content: center;
+  font-weight: 600;
+  padding-top:8px;
+}
+    
+
+    .nav-mobile
+    {
+        display: block;
+    }
+    .show
+    {
+        display: none !important;
+    }
+    .theme-switch-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 130px;
+        margin: 0 auto 16px;
+        text-align: center;
+      }
+      
+      .theme-switch {
+        display: inline-block;
+        margin: 0 auto;
+      }
+    .post-titulo h1
+{
+    
+    font-size: .5rem;
+    
+
+}
+.post-subtitulo
+{
+    
+    font-size: .3rem;
+}
+.grid-container {
+
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap:20% !important;
+
+
+  }
+ 
+  .post-container2
+  {
+    grid-template-columns: 1fr !important;
+  }
+  .post-container2-img
+{
+   
+    justify-content: center;
+    width:50%;
+    max-width: 14rem;
+
+}
+.div-text1
+{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+.div-text2 {
+    
+    width: 100% !important;
+    text-align: center !important;
+}
+.post-box2-fonte
+{
+    justify-content: space-evenly !important;
+}
+.post-box2-fonte h3
+{   margin-top:.5rem;
+    margin-right: 0 !important;
+}
+
+.pagination-div
+{
+    padding-top: 8rem !important;
+}
+
+.grid-section
+{
+    padding-bottom: 10rem;
+}
+.link-container::before, .link-container::after
+{
+    display: none;
+}
+.input_comentario
+{
+    width: 85% !important;
+}
+#main-comentario
+{
+    display: none !important;
+}
+.post2-comentarios {
+    justify-content: center !important;
+    margin-top: 1rem !important;
+
+}
+.comentario-box.is-active
+{
+    width:18rem !important; 
+    height:15rem !important;
+    left:auto !important;
+}
+.sobremim-container
+{
+    display: block !important;
+    width: 100% !important;
+}
+.grid-sobremim2
+{
+    margin-top: 4rem;
+}
+.sobremim-img
+{
+    justify-content: center;
+    display: flex;
+    margin-bottom: 1rem;
+}
+.sobremim h1 
+{
+    text-align: center !important;
+}
+.main-flex-contatos
+{
+    flex-direction: column;
+    margin:auto !important;
+}
+.contatos-item1
+{
+    display: flex !important;
+    margin: auto  !important;
+    width:auto !important;
+    height:10rem !important;
+}
+.contatos-item1 img
+{
+    height:3rem !important;
+    width:90% !important;
+}
+.contatos-item2
+{
+    margin: 3rem auto !important;
+
+}
+}
