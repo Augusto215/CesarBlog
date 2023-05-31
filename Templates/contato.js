@@ -1,28 +1,21 @@
 const nav_mobile = document.querySelector('.nav-mobile');
-const post_box = document.querySelectorAll(".post-box");
 const nav = document.querySelector(".nav");
 const logo = document.querySelector('.cesar');
 const logoImg = document.querySelector('#logo-img');
-const post_sub = document.querySelectorAll('.post-subtitulo');
 const night_button = document.querySelector('.button');
 const hamburger = document.querySelector('.hamburger');
 const menuUl = document.querySelector('.menu-ul');
-const ocultos = document.querySelectorAll("#postagens .post:nth-child(n+3)");
 const nav_links = document.querySelectorAll('.nav-mobile a');
 const modal_login = document.querySelectorAll('.modal-login');
 const modal = document.querySelector('.modal-container');
 const fechar_modal = document.querySelector('.fechar_modal');
 const post2_img = document.querySelector('.post-container2-img');
 const footer_box = document.querySelector('.footer-box');
-const ver_mais = document.querySelector('.ver-mais-a');
 const modal_registro = document.querySelector('.modal');
 const modal_login1 = document.querySelector('.modal1');
 const open_login = document.querySelector('.open-modal2');
 const modal_main_login = document.querySelector('.modal-container1');
 const fechar_modal1 = document.querySelector('.fechar_modal1');
-const input_comentario = document.querySelector('.input_comentario');
-const comentario_box = document.querySelector('.comentario-box');
-const main_comentario = document.querySelector('#main-comentario');
 
 function toggleNightMode(sliders) {
   sliders.forEach((slider) => {
@@ -33,10 +26,11 @@ function toggleNightMode(sliders) {
     }
   });
 
-  if (logoImg.getAttribute('src') === "/img/site(logo).png") {
-    logoImg.setAttribute('src', "/img/logo(escuro).png");
+
+  if (logoImg.getAttribute('src') === "/templates/img/site(logo).png") {
+    logoImg.setAttribute('src', "/templates/img/logo(escuro).png");
   } else {
-    logoImg.setAttribute('src', "/img/site(logo).png");
+    logoImg.setAttribute('src', "/templates/img/site(logo).png");
   }
 
   nav_mobile.classList.toggle("nav-mobile-night");
@@ -45,12 +39,9 @@ function toggleNightMode(sliders) {
   night_button.classList.toggle('button-night');
   nav.classList.toggle('nav-night');
   hamburger.classList.toggle('hamburger-night');
-  modal_registro.classList.toggle('modal-night');
   modal_login1.classList.toggle('modal-night');
-  post_sub.forEach(post_sub => post_sub.classList.toggle('post-subtitulo-night'));
-  post_box.forEach(post_box => post_box.classList.toggle('post-night'));
-  post2_img.classList.toggle('post-container2-img-night');
-  ver_mais.classList.toggle('ver-mais-a-night');
+  modal_registro.classList.toggle('modal-night');
+
  
   // Aqui nós armazenamos o estado do modo noturno
   if (document.body.classList.contains('body-night')) {
@@ -86,8 +77,8 @@ function removeActiveClass() {
 function openModal() {
   modal.classList.toggle('modal-hide');
 
-open_login.addEventListener('click', function(event) {
-  event.stopPropagation();
+open_login.addEventListener('click', function(event) 
+  {event.stopPropagation();
   modal.classList.remove('modal-hide');
   modal_main_login.classList.add('modal-hide1');
 });
@@ -119,11 +110,6 @@ modal_main_login.addEventListener("click", function(event) {
 });
 }
 
-function abrirComentario()
-{
-  
-}
-
 night_button.addEventListener('click', function(event) {
   event.stopPropagation();
   let sliders = document.querySelectorAll('.slider');
@@ -152,29 +138,3 @@ nav_mobile.addEventListener('click', removeActiveClass);
 modal_login.forEach(function(login) {
   login.addEventListener('click', openModal);
 });
-
-
-input_comentario.addEventListener('click', function(event)
-{
-  event.stopPropagation();
-  this.classList.toggle('is-active');
-  main_comentario.classList.toggle('is-active');
-  comentario_box.classList.remove('is-active');
-
-
-
-}); 
-document.body.addEventListener("click", function()
-{
-  input_comentario.classList.remove('is-active');
-  main_comentario.classList.remove('is-active');
-  comentario_box.classList.remove('is-active');
-})
-
-comentario_box.addEventListener("click", function(event)
-{
-  event.stopPropagation();
-  this.classList.add('is-active');
-  input_comentario.classList.remove('is-active');
-  main_comentario.classList.remove('is-active');
-})
