@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block  'conteudo' %}
+<section class="contatos">
+   <div class="main-flex-contatos">
+      <div class="contatos-item1">
+         <img src="{% static 'base/img/instagram(semfundo).png'%}">
+         <img src="{% static 'base/img/tiktok.png'%}">
+         <img src="{% static 'base/img/youtube(semfundo).png'%}">
+         <img src="{% static 'base/img/twitter.png'%}">
+         <img src="{% static 'base/img/linkedin.png'%}">
+         <img src="{% static 'base/img/gmail.png'%}">
+         <img src="{% static 'base/img/discord.png'%}">
+      </div>
+      <div class="contatos-item2">
+         <div class="contatos-square"></div>
+      </div>
+   </div>
+</section>
+{% endblock %}
+{% block 'js' %}
+<script src="{% static 'base/js/contato.js'%}"></script>
+{% endblock  %}

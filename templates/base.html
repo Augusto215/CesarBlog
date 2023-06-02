@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="{% static 'base/css/header.css' %}">
+      <link rel="stylesheet" href="{% static 'base/css/media(mobile).css' %}">
+      <link rel="stylesheet" href="{% static 'base/css/media(tablet).css' %}">
+      <link rel="stylesheet" href="{% static 'base/css/posts.css' %}">
+      <link rel="stylesheet" href="{% static 'base/css/footer.css' %}">
+      <link rel="stylesheet" href="{% static 'base/css/artigos.css' %}">
+      <link rel="stylesheet" href="{% static 'base/css/contato.css' %}">
+      <link rel="stylesheet" href="{% static 'base/css/sobremim.css' %}">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+   </head>
+   <body>
+      <header>
+         <nav class="nav">
+            <button class="hamburger">
+               <div class="bar"></div>
+            </button>
+            <ul class="menu-ul">
+               <li><a href="{% url 'blog:home' %}">Home</a></li>
+               <li><a href="{% url 'blog:artigo' %}">Matérias</a></li>
+               <li><a href="{% url 'blog:artisgosAcademicos' %}">Artigos Acadêmicos</a></li>
+               <li><a href="{% url 'blog:sobremim' %}">Sobre mim</a></li>
+               <li><a href="{% url 'blog:contato' %}">Contato</a></li>
+               <li><a class="modal-login" href="#">Login/Registrar-se</a></li>
+               <!--////////////////////////////DARK MODE BUTTON////////////////////////////-->
+               <li>
+                  <label for="checkbox_desktop">Modo noturno</label>
+                  <div class="theme-switch-wrapper">
+                     <label class="theme-switch" for="checkbox_desktop">
+                        <button id="checkbox_desktop" class="button"></button>
+                        <div class="slider round"></div>
+                     </label>
+                  </div>
+               </li>
+            </ul>
+            <div class="nav-text">
+               <a class="cesar" href="#">
+               <img id="logo-img" src="{% static 'base/img/site(logo).png' %}">
+               </a> 
+            </div>
+         </nav>
+      </header>
+      <nav class="nav-mobile">
+         <a href="{% url 'blog:home' %}">Home</a>
+         <a  href="{% url 'blog:artigo' %}">Matérias</a>
+         <a href="{% url 'blog:artisgosAcademicos' %}">Artigos Acadêmicos</a>
+         <a href="{% url 'blog:sobremim' %}">Sobre mim</a>
+         <a href="{% url 'blog:contato' %}">Contato</a>
+         <a class="modal-login">Login/Registro</a>
+         <!--////////////////////////////DARK MODE BUTTON////////////////////////////-->
+         <label for="checkbox_desktop">Modo noturno</label>
+         <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox_desktop">
+               <button id="checkbox_desktop" class="button"></button>
+               <div class="slider round"></div>
+            </label>
+         </div>
+      </nav>
+    {% block  'conteudo' %}{% endblock  %}
+
+    <footer>
+        <div class="footer-box">
+           <div class="social-box">
+              <ul class="social-links-footer">
+                 <li><a class="footer-img"  href="https://github.com/caiolombello" target="_blank"><img src="{% static 'base/img/instagram(semfundo).png' %}"></i></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/tiktok.png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/youtube(semfundo).png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/twitter.png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/medium(semfundo).png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/linkedin.png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/c(semfundo).png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/id(semfundo).png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/a(semfundoo).png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/gmail.png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/discord.png' %}"></a></li>
+                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/playstation.png' %}"></a></li>
+              </ul>
+              <div class="direitos">
+                 <p>Termos & licença<br>@copyright 2023</p>
+              </div>
+           </div>
+        </div>
+     </footer>
+     <div class="modal-main-comentario">
+        <div class="modal-comentario">
+           <button class="fechar-comentario">x</button>
+           <ul>
+              <li>
+                 aaaa
+              </li>
+              <li>
+                 aaaa
+              </li>
+              <li>
+                 aaaa
+              </li>
+           </ul>
+        </div>
+     </div>
+     <div class="modal-container">
+        <div class="modal">
+           <button class="fechar_modal">x</button>
+           <form>
+              <h1>Registre-se agora, e interaja com nossos posts ;)</h1>
+              <label for="user">Usuário</label>
+              <input type="text" name="user" required placeholder="Usuário">
+              <label for="name">Nome</label>
+              <input type="text" name="name" required placeholder="Nome Completo">
+              <label for="cpf">C.P.F</label>
+              <input type="text" name="cpf" required placeholder="C.P.F">
+              <label for="email">Email</label>
+              <input type="email" name="email" required placeholder="Email">
+              <label for="pass">Senha</label>
+              <input type="password" name="pass" required placeholder="Senha">
+              <label for="repeat-pass">Repetir Senha</label>
+              <input type="password" name="repeat-pass" required placeholder="Repetir senha">
+              <button type="submit" class="login_btn">Registrar-se</button>
+              <a class="open-modal2">Já possui um login? Entre agora!</a>
+           </form>
+        </div>
+     </div>
+     <div class="modal-container1">
+        <div class="modal1">
+           <button class="fechar_modal1">x</button>
+           <form>
+              <h1>É uma honra te ver por aqui!</h1>
+              <label for="nome">Usuário ou Email</label>
+              <input type="name" name="nome" required placeholder="Usuário">
+              <label for="pass">Senha</label>
+              <input type="password" name="pass" required placeholder="Senha">
+              <button type="submit" class="login_btn">Entrar</button>
+           </form>
+        </div>
+     </div>
+     {% block 'js' %}{% endblock  %}
+     <script src="{% static 'base/js/app.js' %}"></script>
+     <script src="https://kit.fontawesome.com/9331f17a29.js" crossorigin="anonymous"></script>
+  </body>
+</html>
