@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block  'conteudo' %}
 <section id="postagens">
    <div class="post">
@@ -297,4 +298,8 @@
       </div>
    </div>
 </section>
+{% endblock  %}
+
+{% block 'js' %}
+<script src="{% static 'base/js/app.js' %}"></script>
 {% endblock  %}
