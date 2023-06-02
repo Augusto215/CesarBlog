@@ -1,5 +1,5 @@
 const nav_mobile = document.querySelector('.nav-mobile');
-const post_box = document.querySelectorAll(".post-box");
+let post_box = document.querySelectorAll(".post-box");
 const nav = document.querySelector(".nav");
 const logo = document.querySelector('.cesar');
 const logoImg = document.querySelector('#logo-img');
@@ -20,9 +20,21 @@ const modal_login1 = document.querySelector('.modal1');
 const open_login = document.querySelector('.open-modal2');
 const modal_main_login = document.querySelector('.modal-container1');
 const fechar_modal1 = document.querySelector('.fechar_modal1');
-const input_comentario = document.querySelector('.input_comentario');
-const comentario_box = document.querySelector('.comentario-box');
-const main_comentario = document.querySelector('#main-comentario');
+let input_comentario = document.querySelectorAll('.input_comentario');
+let comentario_box = document.querySelectorAll('.comentario-box');
+let main_comentario = document.querySelectorAll('.main-comentario');
+let responder_comentario = document.querySelectorAll('.comentario-responder')
+let ler_mais = document.querySelectorAll('.ler-mais')
+let all_post = document.querySelectorAll('.post')
+let adicionar_comentario = document.querySelectorAll('.add-comentario-box')
+const modal_main_resposta = document.querySelector('.modal-main-resposta')
+const modal_resposta_fechar = document.querySelector('.modal-resposta-fechar')
+const modal_add_comentario = document.querySelector('.modal-add-comentario')
+let post_container2_img = document.querySelectorAll('.post-container2-img')
+const fechar_modal_comentario = document.querySelector('.fechar_modal_comentario')
+
+
+
 
 function toggleNightMode(sliders) {
   sliders.forEach((slider) => {
@@ -51,8 +63,7 @@ function toggleNightMode(sliders) {
   post_box.forEach(post_box => post_box.classList.toggle('post-night'));
   post2_img.classList.toggle('post-container2-img-night');
   ver_mais.classList.toggle('ver-mais-a-night');
- 
-  // Aqui nós armazenamos o estado do modo noturno
+
   if (document.body.classList.contains('body-night')) {
     localStorage.setItem('nightMode', 'true');
   } else {
@@ -60,7 +71,6 @@ function toggleNightMode(sliders) {
   }
 }
 
-// Aqui nós verificamos o estado do modo noturno quando a página é carregada
 window.addEventListener('DOMContentLoaded', (event) => {
   let sliders = document.querySelectorAll('.slider');
   if (localStorage.getItem('nightMode') === 'true') {
@@ -68,7 +78,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 });
 
-// ... o resto do seu código ...
 function toggleHamburger() {
   hamburger.classList.toggle('is-active');
   menuUl.classList.toggle('show');
@@ -86,42 +95,37 @@ function removeActiveClass() {
 function openModal() {
   modal.classList.toggle('modal-hide');
 
-open_login.addEventListener('click', function(event) {
-  event.stopPropagation();
-  modal.classList.remove('modal-hide');
-  modal_main_login.classList.add('modal-hide1');
-});
-
-fechar_modal1.addEventListener('click', function() {
-  modal_main_login.classList.remove('modal-hide1');  // Use add para garantir que a classe será adicionada
-});
-
-fechar_modal.addEventListener("click", function() {
-  modal.classList.remove('modal-hide');  // Use add para garantir que a classe será adicionada
-});
-
-modal.addEventListener("click", function(event) {
-  if (event.target === modal) {
+  open_login.addEventListener('click', function(event) {
     event.stopPropagation();
-    modal.classList.remove('modal-hide');  // Use add para garantir que a classe será adicionada
-  }
-});
+    modal.classList.remove('modal-hide');
+    modal_main_login.classList.add('modal-hide1');
+  });
 
-modal_login.forEach(function(login) {
-  login.addEventListener('click', openModal);
-});
+  fechar_modal1.addEventListener('click', function() {
+    modal_main_login.classList.remove('modal-hide1');
+  });
 
-modal_main_login.addEventListener("click", function(event) {
-  if (event.target === modal) {
-    event.stopPropagation();
-    modal_main_login.classList.remove('modal-hide1');  // Use add para garantir que a classe será adicionada
-  }
-});
-}
+  fechar_modal.addEventListener("click", function() {
+    modal.classList.remove('modal-hide');
+  });
 
-function abrirComentario()
-{
-  
+  modal.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      event.stopPropagation();
+      modal.classList.remove('modal-hide');
+    }
+  });
+
+  modal_login.forEach(function(login) {
+    login.addEventListener('click', openModal);
+  });
+
+  modal_main_login.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      event.stopPropagation();
+      modal_main_login.classList.remove('modal-hide1');
+    }
+  });
 }
 
 night_button.addEventListener('click', function(event) {
@@ -153,28 +157,96 @@ modal_login.forEach(function(login) {
   login.addEventListener('click', openModal);
 });
 
+input_comentario.forEach((input, index) => {
+  input.addEventListener("click", function(event) {
+    event.stopPropagation();
+    this.classList.add('is-active');
+    main_comentario[index].classList.add('is-active');
 
-input_comentario.addEventListener('click', function(event)
+    comentario_box.forEach((comentario) => {
+      comentario.classList.remove('is-active');
+    });
+  });
+});
+
+document.body.addEventListener("click", function() {
+  input_comentario.forEach((input) => {
+    input.classList.remove('is-active');
+  });
+
+  main_comentario.forEach((main) => {
+    main.classList.remove('is-active');
+  });
+
+  comentario_box.forEach((comentario) => {
+    comentario.classList.remove('is-active');
+  });
+
+post_box.forEach((post) =>
 {
-  event.stopPropagation();
-  this.classList.toggle('is-active');
-  main_comentario.classList.toggle('is-active');
-  comentario_box.classList.remove('is-active');
-
-
-
-}); 
-document.body.addEventListener("click", function()
-{
-  input_comentario.classList.remove('is-active');
-  main_comentario.classList.remove('is-active');
-  comentario_box.classList.remove('is-active');
+  post.classList.remove('is-active')
 })
+ 
+ 
+});
 
-comentario_box.addEventListener("click", function(event)
+comentario_box.forEach((comentario) => {
+  comentario.addEventListener("click", function(event) {
+    event.stopPropagation();
+    this.classList.add('is-active');
+
+    input_comentario.forEach((input) => {
+      input.classList.remove('is-active');
+    });
+
+    main_comentario.forEach((main) => {
+      main.classList.remove('is-active');
+    });
+  });
+});
+
+responder_comentario.forEach((elemento) => {
+  elemento.addEventListener("click", function(event) {
+    event.stopPropagation();
+    modal_main_resposta.classList.add('is-active');
+  });
+});
+modal_resposta_fechar.addEventListener("click", function(event)
 {
   event.stopPropagation();
-  this.classList.add('is-active');
-  input_comentario.classList.remove('is-active');
-  main_comentario.classList.remove('is-active');
+  modal_main_resposta.classList.remove("is-active")
+})
+modal_main_resposta.addEventListener("click", function(event) {
+  if (event.target === modal_main_resposta) {
+    event.stopPropagation();
+    this.classList.remove('is-active');
+  }
+});
+ler_mais.forEach((ler, index) =>
+{
+  ler.addEventListener("click", function(event)
+  {
+    event.stopPropagation();
+    post_box[index].classList.toggle('is-active')
+  })
+})
+adicionar_comentario.forEach((comentario) =>
+{
+  comentario.addEventListener("click", function(event)
+  { event.stopPropagation()
+    modal_add_comentario.classList.add("is-active")
+  })
+})
+modal_add_comentario.addEventListener("click", function(event)
+{
+  
+  if(event.target === modal_add_comentario)
+  {event.stopPropagation();
+    this.classList.remove('is-active')
+  }
+})
+fechar_modal_comentario.addEventListener("click", function(event)
+{
+  event.stopPropagation()
+  modal_add_comentario.classList.remove('is-active');
 })

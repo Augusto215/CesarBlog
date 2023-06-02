@@ -111,7 +111,7 @@
 {
     width: 85% !important;
 }
-#main-comentario
+.main-comentario
 {
     display: none !important;
 }
@@ -167,4 +167,12 @@
     margin: 3rem auto !important;
 
 }
+.post2 .add-comentario-box
+{
+    display:block;
+    margin-left:5rem;
+}
+.post2 .comentario-box
+{
+    margin-right:5rem;
 }
