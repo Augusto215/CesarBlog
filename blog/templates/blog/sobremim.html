@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block 'css' %}
+   <link rel="stylesheet" href="{% static 'base/css/sobremim.css' %}">
+{% endblock  %}
+
 {% block  'conteudo' %}
 <section class="sobremim">
    <div class="sobremim-main-container">
