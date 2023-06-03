@@ -104,11 +104,9 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+#? Static files (CSS, JavaScript, Images)
 
-STATIC_URL = 'static/'
-
+STATIC_URL = "/static/"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
 STATIC_ROOT = os.path.join("static")
 
@@ -117,8 +115,9 @@ MEDIA_URL = "/media/"
 
 FILE_UPLOAD_MAX_MEMORY_SIZE = 3000000
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+# Messages
+from django.contrib.messages import constants
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

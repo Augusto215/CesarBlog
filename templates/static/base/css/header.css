@@ -452,12 +452,12 @@ input:checked + .slider:before {
 {
   animation: modal .3s ease-in-out;
 }
-.fechar_modal
+button.fechar_modal
 {
   position: absolute;
 
-  top:-20;
-  right:-20;
+  top:-20px;
+  right:-20px;
   width:2em;
   height:2em;
   border-radius: 50%;
@@ -538,12 +538,12 @@ input:checked + .slider:before {
 {
   animation: modal .3s ease-in-out;
 }
-.fechar_modal1
+button.fechar_modal1
 {
   position: absolute;
 
-  top:-20;
-  right:-20;
+  top:-20px;
+  right:-20px;
   width:2em;
   height:2em;
   border-radius: 50%;
@@ -653,12 +653,12 @@ form label
   margin:auto;
 
 }
-.modal-resposta-fechar
+button.modal-resposta-fechar
 {
   position: absolute;
 
-  top:-20;
-  right:-20;
+  top:-20px;
+  right:-20px;
   width:2em;
   height:2em;
   border-radius: 50%;
@@ -744,12 +744,12 @@ form label
   box-shadow: 10px 10px #000;
   border-radius:12px;
 }
-.fechar_modal_comentario
+button.fechar_modal_comentario
 {
   position: absolute;
 
-  top:-20;
-  right:-20;
+  top:-20px;
+  right:-20px;
   width:2em;
   height:2em;
   border-radius: 50%;
@@ -764,4 +764,22 @@ form label
 
 {
   font-size:1.5rem;
+}
+.modal-container-video
+{
+  width:100vw;
+  height:100vh;
+ background-color:rgba(0,0,0, .5);
+ display: none;
+ justify-content: center;
+ align-items: center;
+ z-index: 99999;
+ text-align: center;
+  position:fixed;
+  top:0;
+  left:0;
+}
+.modal-container-video.is-active
+{
+  display:flex;
 }

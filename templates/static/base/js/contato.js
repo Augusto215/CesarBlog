@@ -16,6 +16,15 @@ const modal_login1 = document.querySelector('.modal1');
 const open_login = document.querySelector('.open-modal2');
 const modal_main_login = document.querySelector('.modal-container1');
 const fechar_modal1 = document.querySelector('.fechar_modal1');
+const tiktok_contato = document.querySelector('.tiktok-contato');
+const youtube_contato = document.querySelector('.youtube-contato');
+const gmail_contato = document.querySelector('.gmail-contato');
+const discord_contato = document.querySelector('.discord-contato');
+const twitter_contato = document.querySelector('.twitter-contato');
+const linkedin_contato = document.querySelector('.linkedin-contato');
+const instagram_contato = document.querySelector('.instagram-contato');
+const contatos_rectangle = document.querySelector('.contatos-item2');
+const contatos_square = document.querySelector('.contatos-square')
 
 function toggleNightMode(sliders) {
   sliders.forEach((slider) => {
@@ -26,11 +35,12 @@ function toggleNightMode(sliders) {
     }
   });
 
-  if (logoImg.getAttribute('src') === "/templates/img/site(logo).png") {
-    logoImg.setAttribute('src', "/templates/img/logo(escuro).png");
-  } else {
-    logoImg.setAttribute('src', "/templates/img/site(logo).png");
-  }
+
+  if (logoImg.getAttribute('src') === "/static/base/img/site(logo).png") {
+    logoImg.setAttribute('src', "/static/base/img/logo(escuro).png");
+} else {
+    logoImg.setAttribute('src', "/static/base/img/site(logo).png");
+}
 
 
   nav_mobile.classList.toggle("nav-mobile-night");
@@ -138,3 +148,86 @@ nav_mobile.addEventListener('click', removeActiveClass);
 modal_login.forEach(function(login) {
   login.addEventListener('click', openModal);
 });
+
+tiktok_contato.addEventListener("click", function(event)
+{
+  event.stopPropagation();
+  contatos_square.style.backgroundImage = 'url("/static/base/img/tiktok.png")';
+  contatos_square.style.backgroundRepeat = 'no-repeat';
+  contatos_square.style.backgroundSize = 'cover';
+  contatos_square.style.backgroundPosition = 'center';
+  contatos_rectangle.style.backgroundImage = 'url("/static/base/img/tiktok.png")';
+  contatos_rectangle.style.backgroundRepeat = 'no-repeat';
+  contatos_rectangle.style.backgroundSize = 'contain';
+  contatos_rectangle.backgroundPositionX = 'center';
+  contatos_rectangle.backgroundPositionY = 'center';
+
+})
+
+youtube_contato.addEventListener("click", function(event)
+{
+  event.stopPropagation();
+  contatos_square.style.backgroundImage = 'url("/static/base/img/youtube(semfundo).png")';
+  contatos_square.style.backgroundRepeat = 'no-repeat';
+  contatos_square.style.backgroundSize = 'cover';
+  contatos_square.style.backgroundPositionX = 'center';
+  contatos_square.style.backgroundPositionY = 'center';
+  contatos_rectangle.style.backgroundImage = 'url("/static/base/img/youtube(semfundo).png")';
+  contatos_rectangle.style.backgroundRepeat = 'no-repeat';
+  contatos_rectangle.style.backgroundSize = 'contain';
+  contatos_rectangle.backgroundPositionX = 'center';
+  contatos_rectangle.backgroundPositionY = 'center';
+
+})
+
+instagram_contato.addEventListener("click", function(event)
+{
+  event.stopPropagation();
+  contatos_square.style.backgroundImage = 'url("/static/base/img/instagram(semfundo).png")';
+  contatos_rectangle.style.backgroundImage = 'url("/static/base/img/instagram(semfundo).png")';
+
+})
+
+discord_contato.addEventListener("click", function(event)
+{
+  event.stopPropagation();
+  contatos_square.style.backgroundImage = 'url("/static/base/img/discord.png")';
+  contatos_rectangle.style.backgroundImage = 'url("/static/base/img/discord.png")';
+
+
+})
+
+
+gmail_contato.addEventListener("click", function(event)
+{
+  event.stopPropagation();
+  contatos_square.style.backgroundImage = 'url("/static/base/img/gmail.png")';
+  contatos_rectangle.style.backgroundImage = 'url("/static/base/img/gmail.png")';
+ 
+
+})
+twitter_contato.addEventListener("click", function(event)
+{
+  event.stopPropagation();
+  contatos_square.style.backgroundImage = 'url("/static/base/img/twitter.png")';
+  contatos_rectangle.style.backgroundImage = 'url("/static/base/img/twitter.png")';
+
+  
+
+})
+
+
+
+linkedin_contato.addEventListener("click", function(event)
+{
+  event.stopPropagation();
+  contatos_square.style.backgroundImage = 'url("/static/base/img/linkedin.png")';
+  contatos_rectangle.style.backgroundImage = 'url("/static/base/img/linkedin.png")';
+
+  
+
+})
+
+
+
+

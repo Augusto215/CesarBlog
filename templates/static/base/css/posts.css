@@ -83,6 +83,8 @@ justify-content: center;
 .post-box.is-active .add-comentario-box
 {
   display:block;
+  bottom:5px;
+  right:6rem;
 }
 .post-box.is-active .comentario-box
 {
@@ -94,12 +96,9 @@ justify-content: center;
   
   bottom:-9rem;
   
+  
 }
-.post .add-comentario-box
-{
-  bottom:5px;
-  right:6rem; 
-}
+
 .post-box.is-active .ler-mais
 {
   display:none;
@@ -206,40 +205,46 @@ justify-content: center;
     display: grid;
     align-items:start;
 }
-.post-container2
-{   
+
+
+  .post-container2 {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: 25% auto; /* Ajusta a divisão de colunas para a imagem e o texto */
-    grid-gap: .7rem; /* Adiciona um espaço entre a imagem e o texto */
-    width:85%;
-    align-items: start; /* Alinha os itens para começar */
+    grid-template-columns: 1fr 6fr;
+    grid-gap: 0.9rem;
+    width: 85%;
     position: relative;
 }
+
 .post-container2-img
-{
-    align-items: center;
-    display: flex;
-    justify-content: left;
-    height:100%;
-    max-height: 18.3rem;
+ {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: left;
+  max-height:18rem;
+  
+}
+
+   
+
+
+  .post-container2-img img {
     border: solid #fff 2px;
+    height: 100%;
+    max-height:18rem;
     box-shadow: 5px 5px #000;
 }
-.body-night .post-container2-img
+
+.body-night .post-container2-img img
 {
-    border:solid #000 2px;
-    box-shadow: 5px 5px #3c3c3c;
+  border: solid #000 2px;
+  box-shadow: 5px 5px #3c3c3c;
+  
 }
 
-.post-container2 img
-{
-    object-fit:cover;
-    width:100%;
-    height:100%;
 
-    
-}
+
 .div-text2
 {
     display: grid;
@@ -269,9 +274,10 @@ justify-content: center;
 .post2-comentarios
 {
   display: flex;
-  width:100%;
+  width: 100%;
   justify-content: space-between;
   margin-top: 3rem;
+  margin-left: 1rem;
   
 }
 .comentario-box
@@ -354,7 +360,7 @@ justify-content: center;
   z-index:2;
   
 }
-.post2 .comentario-box.is-active
+.post2-comentarios .comentario-box.is-active
 {
   left:-2.3rem;
 }
@@ -531,4 +537,5 @@ margin-bottom: 3rem;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  
 }

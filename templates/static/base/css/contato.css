@@ -14,18 +14,20 @@
   justify-content:left;
 }
 
-.contatos-item2
-{
-border: #fff solid 2px;
 
-}
 .contatos-item2
 {
   width:80%;
+  max-width:40rem;
   height: 40rem;
   position: relative;
   box-shadow:10px 10px #000;
-  margin-left:10rem;
+ margin:auto;
+  border: #fff solid 2px;
+  background-position-y:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position-x:center;
 }
 
 .contatos-item1
@@ -41,7 +43,7 @@ border: #fff solid 2px;
 {
     height: 5rem;
     width:auto;
-    
+    cursor:pointer;
 }
 .contatos-square {
   position: absolute;
@@ -53,6 +55,10 @@ border: #fff solid 2px;
   padding: 3rem;
   transform: translateX(-50%);
   box-shadow: 5px 5px #000;
+  background-position-y:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position-x:center;
 }
 .body-night .contatos-square
 {

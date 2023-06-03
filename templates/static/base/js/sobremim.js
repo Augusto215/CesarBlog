@@ -26,12 +26,12 @@ function toggleNightMode(sliders) {
     }
   });
 
+  if (logoImg.getAttribute('src') === "/static/base/img/site(logo).png") {
+    logoImg.setAttribute('src', "/static/base/img/logo(escuro).png");
+} else {
+    logoImg.setAttribute('src', "/static/base/img/site(logo).png");
+}
 
-  if (logoImg.getAttribute('src') === "/templates/img/site(logo).png") {
-    logoImg.setAttribute('src', "/templates/img/logo(escuro).png");
-  } else {
-    logoImg.setAttribute('src', "/templates/img/site(logo).png");
-  }
 
   nav_mobile.classList.toggle("nav-mobile-night");
   document.body.classList.toggle('body-night');

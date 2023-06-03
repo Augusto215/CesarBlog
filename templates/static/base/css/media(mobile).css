@@ -118,6 +118,7 @@
 .post2-comentarios {
     justify-content: center !important;
     margin-top: 1rem !important;
+    margin-left:0 !important;
 
 }
 .comentario-box.is-active
@@ -167,12 +168,19 @@
     margin: 3rem auto !important;
 
 }
-.post2 .add-comentario-box
+
+.post2-comentarios .comentario-box
 {
-    display:block;
     margin-left:5rem;
 }
-.post2 .comentario-box
+.post2-comentarios .comentario-box.is-active
 {
-    margin-right:5rem;
+    margin:auto !important;
+}
+.post2-comentarios .add-comentario-box
+{
+    display:block;
+    margin-right: 5rem;
+}
+
 }
