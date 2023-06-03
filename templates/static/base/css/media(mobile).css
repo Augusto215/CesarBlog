@@ -182,5 +182,19 @@
     display:block;
     margin-right: 5rem;
 }
+.post-container2-img
+{
+    justify-content:center !important;
+    
+}
+.wistia_responsive_wrapper
+{
+    width: 15rem !important;
+    height:15rem !important;
 
+}
+.fechar-modal-video
+{
+   font-size:1em;
+}
 }
