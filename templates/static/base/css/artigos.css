@@ -46,8 +46,11 @@
   position: absolute;
   bottom: -3.5rem;
   display: inline-block;
-}
 
+}
+.center-text {
+  text-align: center;
+}
 .body-night .grid-item::before
 {
   border:solid #000 2px;

@@ -11,6 +11,7 @@ class Post(models.Model):
     titulo = models.CharField(max_length=255, null=False, blank=False)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     video = models.URLField(blank=True, null=True)
+    font = models.CharField(max_length=100, blank=True, null=True)
     link_fonte = models.URLField(blank=True, null=True)
     post = RichTextField()
     data = models.DateTimeField(default = datetime.now)

@@ -1,16 +1,25 @@
 from django.shortcuts import render
 from usuarios.models import *
 from django.core.paginator import Paginator
+from .models import *
 
 # Create your views here.
 def home(request):
-    return render(request, 'blog/cesar.html')
+    post = Post.objects.all()
+    redes_sociais = Contato.objects.all()
+    
+    context = {
+    'post':post,
+    'redes_sociais':redes_sociais
+    }
+
+    return render(request, 'blog/cesar.html', context)
 
 
 def artigos(request, page=1):
     redes_sociais = Contato.objects.all()
     artigos = Materias.objects.all()
-    paginator = Paginator(artigos, 1)
+    paginator = Paginator(artigos, 6)
     page_obj = paginator.get_page(page)
     
     context = {

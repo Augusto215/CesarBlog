@@ -40,7 +40,7 @@ class SobreMim(models.Model):
 class Materias(models.Model):
     titulo = models.CharField(max_length=100, blank=False, null=False)
     image = models.ImageField(upload_to='images/', null=False, blank=False)
-    descricao = RichTextField()
+    descricao = models.TextField(max_length=141, null=False, blank=False)
     link = models.URLField(null=True, blank=True)
     
     def __str__(self) -> str:
@@ -50,7 +50,7 @@ class Materias(models.Model):
 class ArtigoAcademiaco(models.Model):
     titulo = models.CharField(max_length=100, blank=False, null=False)
     image = models.ImageField(upload_to='images/', null=False, blank=False)
-    descricao =  RichTextField()
+    descricao =  models.TextField(max_length=141, null=False, blank=False)
     link = models.URLField(null=True, blank=True)
     
     def __str__(self) -> str:
@@ -64,9 +64,9 @@ class Contato(models.Model):
     twitter = models.URLField(null=True, blank=True)
     medium = models.URLField(null=True, blank=True)
     Linkedin = models.URLField(null=True, blank=True)
-    link = models.URLField(null=True, blank=True)
-    link = models.URLField(null=True, blank=True)
-    link = models.URLField(null=True, blank=True)
+    academia_edu = models.URLField(null=True, blank=True)
+    orcid = models.URLField(null=True, blank=True)
+    Lattes = models.URLField(null=True, blank=True)
     gmail = models.URLField(null=True, blank=True)
     discord = models.URLField(null=True, blank=True)
     playstation = models.URLField(null=True, blank=True)
