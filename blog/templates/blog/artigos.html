@@ -5,19 +5,83 @@
    <div class="grid-text">
       <h1>Artigos/livros publicados:</h1>
    </div>
-   <div class="grid-main-container">
+  
       <div class="grid-container">
          {% for artigo in page_obj  %}
-         <div class="grid-item">
+         <div class="grid-item-container">
             <div class="title">{{artigo.titulo}}</div>
+         <div class="grid-item">
+        
             <a href="#">
                <img class="grid-img" src="{{artigo.image.url}}">
                </a>
-            <div class="description">{{artigo.descricao|safe}}</div>
+           
          </div>
-         {% endfor %}
+         <div class="description">{{artigo.descricao|safe}}</div>
       </div>
+      <!-- separação -->
+      <div class="grid-item-container">
+         <div class="title">{{artigo.titulo}}</div>
+      <div class="grid-item">
+     
+         <a href="#">
+            <img class="grid-img" src="{{artigo.image.url}}">
+            </a>
+        
+      </div>
+      <div class="description">{{artigo.descricao|safe}}</div>
    </div>
+     <!-- separação -->
+     <div class="grid-item-container">
+      <div class="title">{{artigo.titulo}}</div>
+   <div class="grid-item">
+  
+      <a href="#">
+         <img class="grid-img" src="{{artigo.image.url}}">
+         </a>
+     
+   </div>
+   <div class="description">{{artigo.descricao|safe}}</div>
+</div>
+  <!-- separação -->
+  <div class="grid-item-container">
+   <div class="title">{{artigo.titulo}}</div>
+<div class="grid-item">
+
+   <a href="#">
+      <img class="grid-img" src="{{artigo.image.url}}">
+      </a>
+  
+</div>
+<div class="description">{{artigo.descricao|safe}}</div>
+</div>
+  <!-- separação -->
+  <div class="grid-item-container">
+   <div class="title">{{artigo.titulo}}</div>
+<div class="grid-item">
+
+   <a href="#">
+      <img class="grid-img" src="{{artigo.image.url}}">
+      </a>
+  
+</div>
+<div class="description">{{artigo.descricao|safe}}</div>
+</div>
+  <!-- separação -->
+      <div class="grid-item-container">
+         <div class="title">{{artigo.titulo}}</div>
+      <div class="grid-item">
+     
+         <a href="#">
+            <img class="grid-img" src="{{artigo.image.url}}">
+            </a>
+        
+      </div>
+      <div class="description">{{artigo.descricao|safe}}</div>
+   </div>
+   </div>
+         {% endfor %}
+       
    <!-- Start Pagination -->
    <!-- End Pagination -->
 </section>
