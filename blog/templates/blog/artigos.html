@@ -7,48 +7,15 @@
    </div>
    <div class="grid-main-container">
       <div class="grid-container">
+         {% for artigo in page_obj  %}
          <div class="grid-item">
-            <div class="title">Título</div>
+            <div class="title">{{artigo.titulo}}</div>
             <a href="#">
-               <img class="grid-img" src="{%static "base/img/tiktok.png" %}">
+               <img class="grid-img" src="{{artigo.image.url}}">
                </a>
-            <div class="description">description</div>
+            <div class="description">{{artigo.descricao|safe}}</div>
          </div>
-         <div class="grid-item">
-            <div class="title">Título</div>
-            <a href="#">
-            <img class="grid-img" src="{%static "base/img/tiktok.png" %}">
-            </a>
-            <div class="description">description</div>
-         </div>
-         <div class="grid-item">
-            <div class="title">Título</div>
-            <a href="#">
-               <img class="grid-img" src="{%static "base/img/tiktok.png" %}">
-               </a>
-            <div class="description">description</div>
-         </div>
-         <div class="grid-item">
-            <div class="title">Título</div>
-            <a href="#">
-               <img class="grid-img" src="{%static "base/img/tiktok.png" %}">
-               </a>
-            <div class="description">description</div>
-         </div>
-         <div class="grid-item">
-            <div class="title">Título</div>
-            <a href="#">
-               <img class="grid-img" src="{%static "base/img/tiktok.png" %}">
-               </a>
-            <div class="description">description</div>
-         </div>
-         <div class="grid-item">
-            <div class="title">Título</div>
-            <a href="#">
-               <img class="grid-img" src="{%static "base/img/tiktok.png" %}">
-               </a>
-            <div class="description">description</div>
-         </div>
+         {% endfor %}
       </div>
    </div>
    <!-- Start Pagination -->
@@ -56,12 +23,13 @@
 </section>
 <div class="pagination-div">
    <ul class="pagination">
-      <li><a href="#0">&lt;</a></li>
-      <li><a class="active" href="#0">1</a></li>
-      <li><a href="#0">2</a></li>
-      <li><a href="#0">3</a></li>
-      <li><a href="#0">4</a></li>
-      <li><a href="#0">&gt;</a></li>
+      {% if page_obj.has_previous %}
+      <li><a href="{% url 'blog:artigo' page_obj.previous_page_number %}">&lt;</a></li>
+      {% endif %}
+      <li><a class="active" href="#0">{{ page_obj.number }}</a></li>
+      {% if page_obj.has_next %}
+      <li><a href="{% url 'blog:artigo' page_obj.next_page_number %}">&gt;</a></li>
+      {% endif %}
    </ul>
 </div>
 {% endblock%}

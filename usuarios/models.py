@@ -39,6 +39,7 @@ class SobreMim(models.Model):
 
 class Materias(models.Model):
     titulo = models.CharField(max_length=100, blank=False, null=False)
+    image = models.ImageField(upload_to='images/', null=False, blank=False)
     descricao = RichTextField()
     link = models.URLField(null=True, blank=True)
     
@@ -48,6 +49,7 @@ class Materias(models.Model):
 
 class ArtigoAcademiaco(models.Model):
     titulo = models.CharField(max_length=100, blank=False, null=False)
+    image = models.ImageField(upload_to='images/', null=False, blank=False)
     descricao =  RichTextField()
     link = models.URLField(null=True, blank=True)
     

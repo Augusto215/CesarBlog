@@ -9,7 +9,9 @@ urlpatterns = [
     path('', home, name='home'),
     path('sobremim/', sobremim, name='sobremim'),
     path('contato/', contato, name='contato'),
-    path('artisgosAcademicos/', artisgosAcademicos, name='artisgosAcademicos'),
-    path('artigos/', artigos, name='artigo'),
+    path('artisgosAcademicos/', artisgosAcademicos, name='artisgosAcademicos_default'),
+    path('artisgosAcademicos/page/<int:page>/', artisgosAcademicos, name='artisgosAcademicos'),
+    path('artigos/', artigos, name='artigo_default'),
+    path('artigos/page/<int:page>/', artigos, name='artigo'),
     
 ]

@@ -10,10 +10,11 @@ def home(request):
 def artigos(request, page=1):
     redes_sociais = Contato.objects.all()
     artigos = Materias.objects.all()
-    paginator = Paginator(artigos, 6)
+    paginator = Paginator(artigos, 1)
     page_obj = paginator.get_page(page)
     
     context = {
+        ''
         'page_obj':page_obj,
         'redes_sociais':redes_sociais
     }

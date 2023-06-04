@@ -20,8 +20,8 @@
             </button>
             <ul class="menu-ul">
                <li><a href="{% url 'blog:home' %}">Home</a></li>
-               <li><a href="{% url 'blog:artigo' %}">Matérias</a></li>
-               <li><a href="{% url 'blog:artisgosAcademicos' %}">Artigos Acadêmicos</a></li>
+               <li><a href="{% url 'blog:artigo_default' %}">Matérias</a></li>
+               <li><a href="{% url 'blog:artisgosAcademicos_default' %}">Artigos Acadêmicos</a></li>
                <li><a href="{% url 'blog:sobremim' %}">Sobre mim</a></li>
                <li><a href="{% url 'blog:contato' %}">Contato</a></li>
                <li><a class="modal-login" href="#">Login/Registrar-se</a></li>
@@ -45,8 +45,8 @@
       </header>
       <nav class="nav-mobile">
          <a href="{% url 'blog:home' %}">Home</a>
-         <a  href="{% url 'blog:artigo' %}">Matérias</a>
-         <a href="{% url 'blog:artisgosAcademicos' %}">Artigos Acadêmicos</a>
+         <a  href="{% url 'blog:artigo_default' %}">Matérias</a>
+         <a href="{% url 'blog:artisgosAcademicos_default' %}">Artigos Acadêmicos</a>
          <a href="{% url 'blog:sobremim' %}">Sobre mim</a>
          <a href="{% url 'blog:contato' %}">Contato</a>
          <a class="modal-login">Login/Registro</a>
