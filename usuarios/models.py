@@ -1,13 +1,91 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+from django.utils.safestring import mark_safe
 
 # Create your models here.
-
-
 class Usuario(models.Model):
-    nome = models.CharField(max_length=50)
-    email = models.EmailField()
-    cpf = models.CharField(max_length=50)
-    senha = models.CharField(max_length=50)
+    userName = models.CharField(max_length=100, null=False, blank=False)
+    cpf = models.CharField(max_length=12, null=True, blank=True)
+    nomeUsuario =  models.CharField(max_length=100, null=True, blank=True)
+    usuarioEmail  =  models.CharField(max_length=100, null=False, blank=False)
+    senha = models.CharField(max_length=100, null=False, blank=False)
     
     def __str__(self) -> str:
-        return self.nome
+        return self.userName
+    
+
+class SobreMim(models.Model):
+    titulo = models.CharField(max_length=100, blank=False, null=False)
+    image = models.ImageField(upload_to='images/', null=False, blank=False)
+    sobre_mim = RichTextField()
+    
+     #? Metodo para sempre ter apenas um Sobre mim
+    def save(self, *args, **Kawargs):
+        self.pk =1
+        super(SobreMim, self).save(*args, **Kawargs)
+
+
+    def delete(self, *args, **kwargs):
+        pass
+    
+    @classmethod
+    def load(cls):
+        obj, created = cls.objects.get_or_create(pk=1)
+        if not created:
+            return obj 
+        return SobreMim(pk=1)
+    
+
+
+class Materias(models.Model):
+    titulo = models.CharField(max_length=100, blank=False, null=False)
+    descricao = RichTextField()
+    link = models.URLField(null=True, blank=True)
+    
+    def __str__(self) -> str:
+        return self.titulo
+    
+
+class ArtigoAcademiaco(models.Model):
+    titulo = models.CharField(max_length=100, blank=False, null=False)
+    descricao =  RichTextField()
+    link = models.URLField(null=True, blank=True)
+    
+    def __str__(self) -> str:
+        return self.titulo
+
+
+class Contato(models.Model):
+    instagram = models.URLField(null=True, blank=True)
+    tiktok = models.URLField(null=True, blank=True)
+    youtube = models.URLField(null=True, blank=True)
+    twitter = models.URLField(null=True, blank=True)
+    medium = models.URLField(null=True, blank=True)
+    Linkedin = models.URLField(null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
+    gmail = models.URLField(null=True, blank=True)
+    discord = models.URLField(null=True, blank=True)
+    playstation = models.URLField(null=True, blank=True)
+    
+    def __str__(self) -> str:
+        return f'links redes sociais'
+    
+     #? Metodo para sempre ter apenas um Sobre mim
+    def save(self, *args, **Kawargs):
+        self.pk =1
+        super(Contato, self).save(*args, **Kawargs)
+
+
+    def delete(self, *args, **kwargs):
+        pass
+    
+    @classmethod
+    def load(cls):
+        obj, created = cls.objects.get_or_create(pk=1)
+        if not created:
+            return obj 
+        return Contato(pk=1)
+
+

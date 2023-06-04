@@ -20,6 +20,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -121,6 +122,22 @@ from django.contrib.messages import constants
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image', 'Table', 'HorizontalRule'],
+            ['Undo', 'Redo'],
+            ['Source'],
+        ],
+        'height': 200,
+        'width': 500,
+        'tabSpaces': 4,
+    }
+}
 
 LOGO_IMAGE = 'base/img/DefConectaLogo/defAdminpng.png'
 

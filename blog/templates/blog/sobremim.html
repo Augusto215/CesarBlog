@@ -8,65 +8,14 @@
 {% block  'conteudo' %}
 <section class="sobremim">
    <div class="sobremim-main-container">
-      <h1>Sobre César Beck</h1>
+      <h1>{{sobre_mim.titulo}}</h1>
       <div class="sobremim-container">
          <div class="sobremim-img">
-            <img src="{% static 'base/img/download.jpeg'%}">
+            <img src="{{sobre_mim.image.url}}">
          </div>
          <div class="sobremim-text">
             <p>
-               lorem ipsum faksflsakflsakfals
-               faksflsakflsakfalslaskfl
-               kfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaç
-               fsafçsfsafsafsa.
-               lorem ipsum faksfl
-               sakflsakfals
-               faksflsakflsakfalslaskflkfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaçfsafçsfsafsafsa.
-               lorem ipsum faksflsakflsakfals
-               faksflsakflsakfalslaskfl
-               kfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaç
-               fsafçsfsafsafsa.
-               lorem ipsum faksfl
-               sakflsakfals
-               faksflsakflsakfalslaskflkfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaçfsafçsfsafsafsa.
-               lorem ipsum faksflsakflsakfals
-               faksflsakflsakfalslaskfl
-               kfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaç
-               fsafçsfsafsafsa.
-               lorem ipsum faksfl
-               sakflsakfals
-               faksflsakflsakfalslaskflkfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaçfsafçsfsafsafsa.
-               lorem ipsum faksflsakflsakfals
-               faksflsakflsakfalslaskfl
-               kfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaç
-               fsafçsfsafsafsa.
-               lorem ipsum faksfl
-               sakflsakfals
-               faksflsakflsakfalslaskflkfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaçfsafçsfsafsafsa.
-               lorem ipsum faksflsakflsakfals
-               faksflsakflsakfalslaskflkfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaçfsafçsfsafsafsa.
-               lorem ipsum faksflsakflsakfals
-               faksflsakflsakfalslaskflkfsalkfas
-               lfasklfsakflsakflsakfkfalskfsal
-               alfskflsalfsaçfsafçsfsafsafsa.
+               {{sobre_mim.sobre_mim}}
             </p>
          </div>
       </div>
@@ -89,9 +38,9 @@
       </div>
       <div class="social-sobremim">
          <ul>
-            <img src="{% static 'base/img/a(semfundoo).png'%}">
-            <img src="{% static 'base/img/linkedin.png'%}">
-            <img src="{% static 'base/img/medium(semfundo).png'%}">
+            <a href=""><img src="{% static 'base/img/a(semfundoo).png'%}"></a>
+            <a href=""><img src="{% static 'base/img/linkedin.png'%}"></a>
+            <a href=""><img src="{% static 'base/img/medium(semfundo).png'%}"></a>
          </ul>
       </div>
    </div>

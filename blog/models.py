@@ -1,25 +1,43 @@
-from datetime import datetime
 from django.db import models
+from ckeditor.fields import RichTextField
+from django.utils.safestring import mark_safe
+from PIL import Image
 from usuarios.models import Usuario
+from datetime import datetime
 # Create your models here.
 
-
-class Posts(models.Model):
-    titulo = models.CharField(max_length=50)
-    post = models.TextField()
-    autor = models.CharField(max_length=50)
-    thumb = models.ImageField(upload_to='thumb_cursos',null=False, blank=False)
-    thumbUrl = models.URLField(max_length=256, blank=True, null=True )
+class Post(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    titulo = models.CharField(max_length=255, null=False, blank=False)
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    video = models.URLField(blank=True, null=True)
+    link_fonte = models.URLField(blank=True, null=True)
+    post = RichTextField()
     data = models.DateTimeField(default = datetime.now)
-
-    def __str__(self) -> str:
-        return self.titulo
-
-class Comentarios(models.Model):
-    nome = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    Comentario = models.TextField()
-    data = models.DateTimeField(default = datetime.now)
-    post = models.ForeignKey(Posts, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
-        return self.nome
+        return self.titulo
+    
+    
+
+class Comentarios(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    comentario = models.TextField()
+    data = models.DateTimeField(default = datetime.now)
+    pos = models.ForeignKey(Post, on_delete=models.DO_NOTHING, related_name='comentarios')
+
+    def __str__(self) -> str:
+        return self.usuario.userName
+    
+    
+class Resposta(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    comentario = models.TextField()
+    data = models.DateTimeField(default=datetime.now)
+    comentario_pai = models.ForeignKey(Comentarios, on_delete=models.CASCADE, related_name='respostas')
+
+    def __str__(self):
+        return self.usuario.userName
+    
+    
+
