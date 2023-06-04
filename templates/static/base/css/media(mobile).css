@@ -57,7 +57,7 @@
 .grid-container {
 
     grid-template-columns:1fr !important;
-    row-gap:5% !important;
+    row-gap:2.5% !important;
 
 
 
@@ -195,4 +195,5 @@
 {
    font-size:1em;
 }
+
 }

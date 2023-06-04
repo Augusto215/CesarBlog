@@ -8,7 +8,7 @@
   width:75%;
   margin:4rem auto;
   grid-auto-flow: row dense;
-  overflow:hidden;
+
 }
 
 .grid-item {
@@ -33,6 +33,7 @@
   font-size: 20px;
   position:relative;
   border: solid #fff 2px;
+  padding:12px;
 
 }
 .grid-item .title
