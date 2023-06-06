@@ -6,17 +6,23 @@
    
 
 }
+.sobremim-text
+{
+    word-break:break-word;
+}
 .sobremim-main-container
 {   margin: 2rem 0;
     width:80%;
     text-align: left;
 }
 .sobremim-main-container img
-{
+{   width:10rem;
+    height:10rem;
     margin-right:.6rem;
     border: solid #fff 2px;
     box-shadow: 5px 5px #000;
 }
+
 .body-night .sobremim-main-container img
 {
     border: solid #000 2px;

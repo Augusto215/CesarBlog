@@ -7,7 +7,6 @@ const post_sub = document.querySelectorAll('.post-subtitulo');
 const night_button = document.querySelector('.button');
 const hamburger = document.querySelector('.hamburger');
 const menuUl = document.querySelector('.menu-ul');
-const ocultos = document.querySelectorAll("#postagens .post:nth-child(n+3)");
 const nav_links = document.querySelectorAll('.nav-mobile a');
 const modal_login = document.querySelectorAll('.modal-login');
 const modal = document.querySelector('.modal-container');
@@ -33,7 +32,15 @@ const modal_add_comentario = document.querySelector('.modal-add-comentario')
 let post_container2_img = document.querySelectorAll('.post-container2-img')
 const fechar_modal_comentario = document.querySelector('.fechar_modal_comentario')
 const modal_container_video = document.querySelectorAll('.modal-container-video')
+let comentario_text = document.querySelectorAll(".post-box-p")
+let post_text = document.querySelectorAll('.post-text')
 const fechar_modal_video = document.querySelectorAll('.fechar-modal-video')
+let align_label = document.querySelectorAll('.align-label')
+let post1_container = document.querySelectorAll('.post-container')
+let post1_comentarios = document.querySelectorAll('.post1-comentarios')
+let comentario_ver_respostas = document.querySelectorAll('.comentarios_respostas')
+const modal_main_ler_respostas = document.querySelector('.modal-main-ler-respostas')
+
 
 
 
@@ -165,6 +172,7 @@ input_comentario.forEach((input, index) => {
     event.stopPropagation();
     this.classList.add('is-active');
     main_comentario[index].classList.add('is-active');
+    align_label[index].classList.add('is-active');
 
     comentario_box.forEach((comentario) => {
       comentario.classList.remove('is-active');
@@ -180,16 +188,16 @@ document.body.addEventListener("click", function() {
   main_comentario.forEach((main) => {
     main.classList.remove('is-active');
   });
-
+  align_label.forEach((item) => {
+    item.classList.remove('is-active');
+  });
   comentario_box.forEach((comentario) => {
     comentario.classList.remove('is-active');
   });
 
-post_box.forEach((post) =>
-{
-  post.classList.remove('is-active')
-})
+
  
+
  
 });
 
@@ -201,7 +209,9 @@ comentario_box.forEach((comentario) => {
     input_comentario.forEach((input) => {
       input.classList.remove('is-active');
     });
-
+    align_label.forEach((label) => {
+      label.classList.remove('is-active');
+    });
     main_comentario.forEach((main) => {
       main.classList.remove('is-active');
     });
@@ -225,14 +235,27 @@ modal_main_resposta.addEventListener("click", function(event) {
     this.classList.remove('is-active');
   }
 });
-ler_mais.forEach((ler, index) =>
-{
-  ler.addEventListener("click", function(event)
-  {
+ler_mais.forEach((ler, index) => {
+  ler.addEventListener("click", function(event) {
     event.stopPropagation();
-    post_box[index].classList.toggle('is-active')
-  })
-})
+    console.log("ativo");
+    post_text[index].scrollTop = 0
+    post1_comentarios[index].classList.toggle('is-active')
+    post1_container[index].classList.toggle('is-active')
+    post_box[index].classList.toggle('is-active') 
+    if(post_box[index].classList.contains('is-active'))
+    {
+      ler.innerText = 'Ler menos...'
+    }
+    else
+    {
+      ler.innerText = 'Ler mais...'
+    }
+
+  });
+});
+
+
 adicionar_comentario.forEach((comentario) =>
 {
   comentario.addEventListener("click", function(event)
@@ -283,5 +306,36 @@ modal_container_video.forEach((modal) =>
     {
       this.classList.remove('is-active')
     }
+  })
+})
+window.onload = function() {
+  const contentBlocks = document.querySelectorAll('.post-box p'); // substitua .post-box p pelo seletor do seu texto de postagem
+  const seeMoreButtons = document.querySelectorAll('.ler-mais'); // substitua .ler-mais pelo seletor do seu botão "Ler mais"
+  const btn_post1_comentarios = document.querySelectorAll('.post1-comentarios')
+  const thresholdHeight = 500; // substitua 500 pelo seu limite de altura desejado
+
+  // percorre todos os blocos de conteúdo
+  for (let i = 0; i < contentBlocks.length; i++) {
+    // verifica se a altura do conteúdo é menor do que o limite
+    if (contentBlocks[i].offsetHeight < thresholdHeight) {
+      // se for verdade, esconde o botão
+      seeMoreButtons[i].style.display = 'none';
+      btn_post1_comentarios[i].style.display = 'flex';
+
+    } else {
+      // senão, mostra o botão
+      seeMoreButtons[i].style.display = 'block';
+    }
+  }
+};
+
+
+comentarios_ver_respostas.forEach((comentario) =>
+{
+  comentario.addEventListener("click", function(event)
+  { console.log("clicado")
+    event.stopPropagation();
+    modal_main_ler_respostas.classList.add('is-active')
+    
   })
 })

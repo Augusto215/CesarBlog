@@ -65,19 +65,32 @@
         <div class="footer-box">
            <div class="social-box">
               <ul class="social-links-footer">
-                 <li><a class="footer-img"  href="https://github.com/caiolombello" target="_blank"><img src="{% static 'base/img/instagram(semfundo).png' %}"></i></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/tiktok.png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/youtube(semfundo).png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/twitter.png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/medium(semfundo).png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/linkedin.png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/c(semfundo).png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/id(semfundo).png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/a(semfundoo).png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/gmail.png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/discord.png' %}"></a></li>
-                 <li><a class="footer-img" href="https://discordapp.com/users/270988011066359808" target="_blank"><img src="{% static 'base/img/playstation.png' %}"></a></li>
-              </ul>
+               {% for redes_sociais in redes_sociais  %}
+                 <li><a class="footer-img"  href="{{ redes_sociais.instagram }}" target="_blank"><img src="{% static 'base/img/instagram(semfundo).png' %}"></i></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.tiktok }}" target="_blank"><img src="{% static 'base/img/tiktok.png' %}"></a></li>
+                 
+                 <li><a class="footer-img" href="{{ redes_sociais.youtube }}" target="_blank"><img src="{% static 'base/img/youtube(semfundo).png' %}"></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.twitter }}" target="_blank"><img src="{% static 'base/img/twitter.png' %}"></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.medium }}" target="_blank"><img src="{% static 'base/img/medium(semfundo).png' %}"></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.Linkedin }}" target="_blank"><img src="{% static 'base/img/linkedin.png' %}"></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.academia_edu }}" target="_blank"><img src="{% static 'base/img/c(semfundo).png' %}"></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.orcid }}" target="_blank"><img src="{% static 'base/img/id(semfundo).png' %}"></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.Lattes }}" target="_blank"><img src="{% static 'base/img/a(semfundoo).png' %}"></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.gmail }}" target="_blank"><img src="{% static 'base/img/gmail.png' %}"></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.discord }}" target="_blank"><img src="{% static 'base/img/discord.png' %}"></a></li>
+
+                 <li><a class="footer-img" href="{{ redes_sociais.playstation }}" target="_blank"><img src="{% static 'base/img/playstation.png' %}"></a></li>
+                 {% endfor %}
+               </ul>
               <div class="direitos">
                  <p>Termos & licença<br>@copyright 2023</p>
               </div>

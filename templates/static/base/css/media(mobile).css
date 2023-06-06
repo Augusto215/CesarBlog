@@ -56,16 +56,23 @@
 }
 .grid-container {
 
-    grid-template-columns:1fr !important;
-    row-gap:2.5% !important;
+    width:90% !important;
 
 
 
   }
- 
+  .comentario-form
+  {
+    display:none !important;
+  }
   .post-container2
   {
     grid-template-columns: 1fr !important;
+  }
+  .post-container-item
+  {
+    width:13rem !important;
+    height:13rem !important; 
   }
   .post-container2-img
 {
@@ -97,10 +104,7 @@
 
 
 
-.grid-section
-{
-    padding-bottom: 10rem;
-}
+
 .link-container::before, .link-container::after
 {
     display: none;
@@ -169,7 +173,7 @@
 
 .post2-comentarios .comentario-box
 {
-    margin-left:5rem;
+    margin-left:1rem;
 }
 .post2-comentarios .comentario-box.is-active
 {
@@ -178,7 +182,7 @@
 .post2-comentarios .add-comentario-box
 {
     display:block;
-    margin-right: 5rem;
+   
 }
 .post-container2-img
 {

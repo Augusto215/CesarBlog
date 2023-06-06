@@ -783,3 +783,8 @@ button.fechar_modal_comentario
 {
   display:flex;
 }
+.embed-audio
+{
+  
+  margin:2rem auto;
+}

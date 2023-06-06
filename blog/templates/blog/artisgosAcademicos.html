@@ -5,19 +5,20 @@
    <div class="grid-text">
       <h1>Artigos/livros publicados:</h1>
    </div>
-   <div class="grid-main-container">
-      <div class="grid-container">
-         {% for artigo in page_obj  %}
+   <div class="grid-container">
+      {% for artigo in page_obj  %}
+      <div class="grid-item-container center-text">
+         <div class="title center-text">{{artigo.titulo}}</div>
          <div class="grid-item">
-            <div class="title">{{artigo.titulo}}</div>
-            <a href="#">
-               <img class="grid-img" src="{{artigo.image.url}}">
-               </a>
-            <div class="description">{{artigo.descricao|safe}}</div>
+            <a href="{{artigo.link}}" target="_blank">
+            <img class="grid-img" src="{{artigo.image.url}}">
+            </a>
          </div>
-         {% endfor %}
+         <div class="description center-text">{{artigo.descricao|safe}}</div>
       </div>
+      {% endfor %}
    </div>
+
    <!-- Start Pagination -->
    <!-- End Pagination -->
 </section>

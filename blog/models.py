@@ -9,10 +9,12 @@ from datetime import datetime
 class Post(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     titulo = models.CharField(max_length=255, null=False, blank=False)
+    subtitulo = models.CharField(max_length=255, null=True, blank=True)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     video = models.URLField(blank=True, null=True)
+    font = models.CharField(max_length=100, blank=True, null=True)
     link_fonte = models.URLField(blank=True, null=True)
-    post = RichTextField()
+    post = models.TextField(max_length=100000, blank=False, null=False)
     data = models.DateTimeField(default = datetime.now)
     
     def __str__(self) -> str:
