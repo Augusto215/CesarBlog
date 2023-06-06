@@ -38,8 +38,8 @@ const fechar_modal_video = document.querySelectorAll('.fechar-modal-video')
 let align_label = document.querySelectorAll('.align-label')
 let post1_container = document.querySelectorAll('.post-container')
 let post1_comentarios = document.querySelectorAll('.post1-comentarios')
-let comentario_ver_respostas = document.querySelectorAll('.comentarios_respostas')
-const modal_main_ler_respostas = document.querySelector('.modal-main-ler-respostas')
+let comentario_ver_respostas = document.querySelectorAll('.comentarios-respostas')
+const modal_main_respostas = document.querySelector('.modal-main-ler-respostas')
 
 
 
@@ -218,6 +218,7 @@ comentario_box.forEach((comentario) => {
   });
 });
 
+
 responder_comentario.forEach((elemento) => {
   elemento.addEventListener("click", function(event) {
     event.stopPropagation();
@@ -308,6 +309,7 @@ modal_container_video.forEach((modal) =>
     }
   })
 })
+
 window.onload = function() {
   const contentBlocks = document.querySelectorAll('.post-box p'); // substitua .post-box p pelo seletor do seu texto de postagem
   const seeMoreButtons = document.querySelectorAll('.ler-mais'); // substitua .ler-mais pelo seletor do seu botão "Ler mais"
@@ -329,13 +331,16 @@ window.onload = function() {
   }
 };
 
-
-comentarios_ver_respostas.forEach((comentario) =>
+function abrir_respostas_comentarios()
 {
-  comentario.addEventListener("click", function(event)
-  { console.log("clicado")
-    event.stopPropagation();
-    modal_main_ler_respostas.classList.add('is-active')
-    
-  })
-})
+  modal_main_respostas.classList.add('is-active')
+}
+
+function fechar_modal_respostas(event)
+{
+    modal_main_respostas.classList.remove('is-active')
+    event.stopPropagation()
+ 
+}
+
+

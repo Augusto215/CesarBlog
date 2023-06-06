@@ -788,3 +788,18 @@ button.fechar_modal_comentario
   
   margin:2rem auto;
 }
+
+#preloader 
+{
+  background:#000 url(/static/base/img/amalie-steiness.gif) no-repeat center center;
+  height:100vh;
+  width:100vw;
+  position:fixed;
+  z-index:99999;
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  top:0;
+  left:0;
+  
+}

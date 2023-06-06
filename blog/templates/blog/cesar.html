@@ -59,8 +59,8 @@
                                 Responder
                                 </span>
                             </div>
-                         <div class="comentarios-repostas">Ver <span>1</span> resposta(s) </span>
-                         </div>
+                            <span onclick="abrir_respostas_comentarios()" class="comentarios-repostas">Ver <span>10</span> comentários</span>
+                        </span>
                         </li>
                     </ul>
                     </div>
@@ -176,7 +176,7 @@
 </section>
 <div class="modal-main-resposta">
 <div class="modal-resposta">
-<button class="modal-resposta-fechar">x</button>
+<button onclick="fechar_modal_respostas()" class="modal-resposta-fechar">x</button>
 <div class="comment-section">
 <div class="comment">
 <img src="avatar.png" alt="avatar" class="avatar">
@@ -250,9 +250,8 @@ Conteúdo da postagem
 </div>
 <div class="modal-container-video">
    <div class="modal-video">
-      <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-         <div class="wistia_responsive_wrapper" style="height: 30rem;top:0;width: 30rem;margin: auto; position:relative;
-            }">
+     <iframe src="https://drive.google.com/file/d/16BfCjHK6gabcMnzqudmMvPStLQDLoM-a/preview" width="640" height="480" allow="autoplay"></iframe>
+           
             <button class="fechar-modal-video" style="
                position: absolute;
                top: -15px;
@@ -269,14 +268,14 @@ Conteúdo da postagem
                box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
                outline:none;"
                >x</button>
-            <div class="wistia_embed wistia_async_tq05i69fjl videoFoam=true" style="height:100%;position:relative;width:100%">&nbsp;</div>
+           
          </div>
       </div>
    </div>
 </div>
 <div class="modal-main-ler-respostas">
     <div class="modal-ler-respostas">
-        <button class="fechar-modal-ler-respostas">
+        <button onclick="fechar_modal_respostas(event)" class="fechar-modal-ler-respostas">
             x
         </button>
         <ul class="comentario-arvore">
@@ -284,7 +283,7 @@ Conteúdo da postagem
            
                 <li>
                     <div class="comentario-parte1"> <span class="comentario-img">
-                        <img src="{% static 'base/img/discord.png'%}">
+                       
                         </span>
                         <span class="comentario-nome"> 
                         Thiago Neves
@@ -303,14 +302,14 @@ Conteúdo da postagem
                         Responder
                         </span>
                     </div>
-                 <div class="comentarios-repostas">Ver <span>11</span> resposta(s) </span>
+                 <div onclick="function abrir_respostas_comentarios()" class="comentarios-repostas">Ver <span>11</span> resposta(s) </span>
                  </div>
                 </li>
         </div>
         <div class="respostas-main">
             <li>
                 <div class="comentario-parte1"> <span class="comentario-img">
-                    <img src="{% static 'base/img/discord.png'%}">
+                
                     </span>
                     <span class="comentario-nome"> 
                     Thiago Neves
@@ -329,7 +328,7 @@ Conteúdo da postagem
                     Responder
                     </span>
                 </div>
-             <div class="comentarios-repostas">Ver <span>1</span> resposta(s) </span>
+             <div onclick="function abrir_respostas_comentarios()" class="comentarios-repostas">Ver <span>1</span> resposta(s) </span>
              </div>
             </li>
             
@@ -338,6 +337,7 @@ Conteúdo da postagem
     </ul>
     </div>
 </div>
+
 
 {% endblock  %}
 {% block 'js' %}

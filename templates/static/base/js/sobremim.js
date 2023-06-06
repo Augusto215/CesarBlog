@@ -138,3 +138,4 @@ nav_mobile.addEventListener('click', removeActiveClass);
 modal_login.forEach(function(login) {
   login.addEventListener('click', openModal);
 });
+

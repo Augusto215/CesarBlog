@@ -348,15 +348,19 @@ font-family:""
   display:none;
   position:relative
 }
+.comentario-nome
+{
+  margin-top:.5rem;
+}
 .comentario-img
 {
   
-  height:2.5rem;
-  width:2.5rem;
+  height:1.5rem;
+  width:1.5rem;
   border-radius:50%;
   background:#fff;
   margin-right:1rem;
-  margin-top:-.3rem;
+  
   
 
 }
@@ -512,12 +516,12 @@ margin-bottom: 3rem;
 {
  margin-left:1.5rem;
  font-size: .7rem;
+ margin-top:.5rem;
 }
 .comentario-parte2
 {
   display:flex;
-  justify-content:right;
-  width:75%;
+  width:80%;
   margin:auto;
 
 }
@@ -675,11 +679,52 @@ margin-bottom: 3rem;
   top:0;
   left:0;
 }
-.modal_main_ler_resposta.is-active
+.modal-main-ler-respostas.is-active
 {
   display:flex;
 }
-.comentarios-respostas
+.modal-ler-respostas
 {
-  z-index:999;
+  background-color: #2a2a2d;
+  width:30rem;
+  min-width: 250px;
+  padding: 1em;
+  text-align: start;
+  border:2px solid #ffffff;
+  position: relative;
+  box-shadow: 10px 10px #000;
+}
+.respostas-main
+{
+  margin-top:1rem auto;
+  overflow-y:scroll;
+  width:75%;
+  margin-left:5rem;
+  
+}
+.comentarios-repostas
+{
+  margin:1rem auto;
+  display:flex;
+ width:60%;
+}
+button.fechar-modal-ler-respostas
+{
+  position: absolute;
+
+  top:-20px;
+  right:-20px;
+  width:2em;
+  height:2em;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: rgb(54, 54, 54);
+  font-size:1.3em;
+  cursor:pointer;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+  color:#fff;
+}
+.comentario-arvore li
+{
+  list-style:none;
 }

@@ -227,7 +227,3 @@ linkedin_contato.addEventListener("click", function(event)
   
 
 })
-
-
-
-
