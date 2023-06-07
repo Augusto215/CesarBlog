@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.utils.safestring import mark_safe
 
+
 # Create your models here.
 class Usuario(models.Model):
     userName = models.CharField(max_length=100, null=False, blank=False)
@@ -42,6 +43,7 @@ class Materias(models.Model):
     image = models.ImageField(upload_to='images/', null=False, blank=False)
     descricao = models.TextField(max_length=50, null=False, blank=False)
     link = models.URLField(null=True, blank=True)
+   
     
     def __str__(self) -> str:
         return self.titulo
@@ -52,6 +54,7 @@ class ArtigoAcademiaco(models.Model):
     image = models.ImageField(upload_to='images/', null=False, blank=False)
     descricao =  models.TextField(max_length=50, null=False, blank=False)
     link = models.URLField(null=True, blank=True)
+    
     
     def __str__(self) -> str:
         return self.titulo

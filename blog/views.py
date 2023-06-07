@@ -5,7 +5,7 @@ from .models import *
 
 # Create your views here.
 def home(request):
-    post = Post.objects.all()
+    post = Post.objects.order_by("-data")
     redes_sociais = Contato.objects.all()
     
     context = {
