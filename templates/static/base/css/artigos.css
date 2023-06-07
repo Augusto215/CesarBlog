@@ -23,6 +23,7 @@
   
  
 }
+
 .grid-item-container
 {
   justify-content: center;
@@ -38,7 +39,13 @@
   height:18rem;
   word-wrap:break-word;
   margin:auto;
+  box-shadow: 5px 5px #000;
 
+}
+.body-night .grid-item-container
+{
+  border: solid #000 2px;
+  box-shadow: 5px 5px #3a3a3a;
 }
 .grid-item .title
 {
@@ -56,12 +63,9 @@
 .center-text {
   text-align: center;
 }
-.body-night .grid-item::before
-{
-  border:solid #000 2px;
-}
-.body-night .grid-item .title, 
-.body-night .grid-item .description
+
+.body-night .title, 
+.body-night .description
 {
   color:#000;
   font-weight: 600;

@@ -3,7 +3,7 @@
 {% block  'conteudo' %}
 <section id="postagens">
     {% for post in post  %}
-        {% if post.image.name == '' %}
+        {% if post.image.name == '' and post.post|length > 557%}
         <div class="post">
             <div class="post-container">
                 <div class="div-text">
@@ -72,7 +72,74 @@
                 </div>
             </div>
         </div>
-        
+         {% comment %}? POST TESTE {% endcomment %}
+         {% elif post.image.name == '' and post.post|length < 557%}
+         <div class="post">
+            <div class="post-container">
+                <div class="div-text">
+                    <div class="flex-titulo2">
+                        <div class="post-titulo2">
+                            <h1>
+                            {{post.titulo}}
+                            </h1>
+                            
+                        </div>
+                        {% if post.subtitulo %}
+                            <div class="post-subtitulo">
+                                <h1>
+                                    {{post.subtitulo}}
+                                </h1>
+                            </div>
+                            {% endif %}
+                    </div>
+                </div>
+                <div class="post-box">
+                    <div class="post-text">
+                    <p class="post-box-p">
+                        {{post.post|safe}}
+                    </p>
+                   
+                </div>
+                <div class="post1-comentarios" style="display:flex !important;">
+                    <div class="add-comentario-box"><img src="{% static '/base/img/message (1).png'%}">
+                    </div>
+
+                    {% comment %}? COMENTARIO {% endcomment %}
+                    <div class="comentario-box">
+                        <img src="{% static '/base/img/comment (2).png'%}">
+                        <ul class="comentario-arvore">
+                        <li>
+                            <div class="comentario-parte1"> <span class="comentario-img">
+                                <img src="{% static 'base/img/discord.png'%}">
+                                </span>
+                                <span class="comentario-nome"> 
+                                Thiago Neves
+                                </span>
+                                <span class="comentario-data">10 de Junho
+                                </span> 
+                            </div>
+                            <span> </span>
+                            <span class="comentario-texto">
+                            Kfksalkfaslfkas
+                            fsalkfsalkfsa
+                            flaskf
+                            </span>
+                            <div class="comentario-parte2">
+                                <span class="like"><i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i></span> <span class="dislike"><i class="fa-solid fa-thumbs-down" style="color: #ffffff;"></i></span><span class="comentario-responder">
+                                Responder
+                                </span>
+                            </div>
+                            <span onclick="abrir_respostas_comentarios()" class="comentarios-repostas">Ver <span>10</span> comentários</span>
+                        </span>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                    
+                </div>
+            </div>
+        </div>
+      
 
         {% comment %}? POST 2 {% endcomment %}
         {% else %}
@@ -250,25 +317,57 @@ Conteúdo da postagem
 </div>
 <div class="modal-container-video">
    <div class="modal-video">
-     <iframe src="https://drive.google.com/file/d/16BfCjHK6gabcMnzqudmMvPStLQDLoM-a/preview" width="640" height="480" allow="autoplay"></iframe>
+     <iframe class="responsive-iframe" src="https://drive.google.com/file/d/16BfCjHK6gabcMnzqudmMvPStLQDLoM-a/preview"  width="640" height="480" allow="autoplay">
            
+           
+            </iframe>
+
             <button class="fechar-modal-video" style="
-               position: absolute;
-               top: -15px;
-               right: -15px;
-               width: 2rem;
-               height: 2rem;
-               z-index: 999;
-               border-radius: 50%;
-               border: 2px solid #fff;
-               background-color: rgb(54,54,54);
-               font-size: 1.3em;
-               color: #fff;
-               cursor: pointer;
-               box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
-               outline:none;"
-               >x</button>
-           
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 2rem;
+            height: 2rem;
+            z-index: 999;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background-color: rgb(54,54,54);
+            font-size: 1.3em;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+            outline:none;"
+            >x</button>
+             {% comment %}? COMENTARIO {% endcomment %}
+
+             <div class="post2-comentarios">
+                <div class="add-comentario-box"> <img src="{% static '/base/img/message (1).png'%}">
+                </div>
+                <div class="comentario-box">
+                <img src="{% static '/base/img/comment (2).png'%}">
+                <li>
+                    <div class="comentario-parte1"> <span class="comentario-img">
+                        <img src="{% static 'base/img/discord.png'%}">
+                        </span>
+                        <span class="comentario-nome"> 
+                        Thiago Neves
+                        </span>
+                        <span class="comentario-data">10 de Junho
+                        </span> 
+                    </div>
+                    <span> </span>
+                    <span class="comentario-texto">
+                    Kfksalkfaslfkas
+                    fsalkfsalkfsa
+                    flaskf
+                    </span>
+                    <div class="comentario-parte2">
+                        <span class="like"><i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i></span> <span class="dislike"><i class="fa-solid fa-thumbs-down" style="color: #ffffff;"></i></span><span class="comentario-responder">
+                        Responder
+                        </span>
+                    </div>
+                </li>
+                </div>
          </div>
       </div>
    </div>

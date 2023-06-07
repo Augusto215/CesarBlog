@@ -1,3 +1,5 @@
+
+
 .blur-effect {
   filter: blur(8px);
   -webkit-filter: blur(8px);
@@ -44,7 +46,7 @@ justify-content: center;
 .post-subtitulo
 {
   font-size: .9rem;
-  font-family: 'American Typewriter', sans-serif;
+  font-family: 'myFont';
                                                 
 }
 .post-subtitulo-night
@@ -62,7 +64,8 @@ justify-content: center;
 }
  .post-box
 {
-    width: 84%;
+    width: 85%;
+    height:11.5rem;
     border: solid #fff 2px;
     padding:0.5rem;
     display: inline-block;
@@ -73,8 +76,9 @@ justify-content: center;
 }
 .post-text
 {
-  height:5.4rem;
+  height:5rem;
   overflow:hidden;
+  padding:.7rem;
  
   
 }
@@ -98,7 +102,7 @@ justify-content: center;
   height: 25rem;
   width:85%;
   margin:auto;
-  background:#3a3a3a;
+  background:#2a2a2d;
   z-index:999999;
 
 
@@ -111,11 +115,14 @@ justify-content: center;
   
 }
 
-
+.post-box.is-active .comentario-box.is-active
+{
+  bottom:-3rem;
+}
 .post .comentario-box.is-active
 {
   
-  bottom:-9rem;
+  bottom:-3rem;
   right:6px;
   
   
@@ -125,8 +132,8 @@ justify-content: center;
 .post-box p
 {
     font-family: 'Nexa Bold', sans-serif;
-    text-align:left;
     word-break: break-word;
+    text-align:justify;
 }
 .post-box.post-night
 {
@@ -288,6 +295,7 @@ justify-content: center;
 .post-titulo2
 {
     align-self: start;
+    word-break:break-word;
 }
 
 .post-subtitulo2
@@ -325,9 +333,11 @@ font-family:""
   box-shadow: 5px 5px #000;
   cursor: pointer;
   max-height: 4rem;
+  background-color:#2a2a2d;
   
   
 }
+
 .add-comentario-box
 
 {
@@ -337,6 +347,7 @@ font-family:""
   cursor: pointer;
   max-height: 4rem;
  margin-right: 1rem;
+ background-color:#2a2a2d;
 }
 .add-comentario-box img
 {
@@ -582,7 +593,7 @@ margin-bottom: 3rem;
   
 }
 .input-comentario-submit {
-  background-image: url(/static/base/img/send.png);
+  background-image: url(/static/base/img/userlmn_81e23760d256f23eac8229385f4a96df.png);
   height: 2rem;
   width: 2rem;
   background-size: cover;
@@ -727,4 +738,13 @@ button.fechar-modal-ler-respostas
 .comentario-arvore li
 {
   list-style:none;
+}
+.modal-container-video.is-active .comentario-box.is-active
+{
+  top:5rem;
+  left:1rem;
+}
+.body-night p, h1, h2, h3
+{
+  font-weight:600;
 }

@@ -1,5 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/nexa-bold');
-@import url('https://fonts.cdnfonts.com/css/american-typewriter?styles=16268');
+@font-face
+{
+  font-family:'myFont';
+  src:url(/static/base/fonts/ufonts.com_american-typewriter-condensed-bold.ttf) format('ttf');
+}
 
 *
 {
@@ -722,7 +726,7 @@ button.modal-resposta-fechar
  display: none;
  justify-content: center;
  align-items: center;
- z-index: 99999;
+ z-index: 999999;
  text-align: center;
   position:fixed;
   top:0;
@@ -791,7 +795,7 @@ button.fechar_modal_comentario
 
 #preloader 
 {
-  background:#000 url(/static/base/img/amalie-steiness.gif) no-repeat center center;
+  background:#000 url(/static/base/img/7e2aeb1567e91bfc2404cecca6aceecd.gif) no-repeat center center;
   height:100vh;
   width:100vw;
   position:fixed;

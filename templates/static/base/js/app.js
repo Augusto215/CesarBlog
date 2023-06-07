@@ -40,6 +40,7 @@ let post1_container = document.querySelectorAll('.post-container')
 let post1_comentarios = document.querySelectorAll('.post1-comentarios')
 let comentario_ver_respostas = document.querySelectorAll('.comentarios-respostas')
 const modal_main_respostas = document.querySelector('.modal-main-ler-respostas')
+const iframe = document.querySelector('.responsive-iframe')
 
 
 
@@ -293,6 +294,7 @@ fechar_modal_video.forEach((fechar, index)=>
   {
     event.stopPropagation()
     modal_container_video[index].classList.remove('is-active')
+   
   }
   
 )
@@ -305,31 +307,13 @@ modal_container_video.forEach((modal) =>
     event.stopPropagation();
     if(event.target === modal)
     {
+      iframe.setAttribute('src', iframe.getAttribute('src'));
       this.classList.remove('is-active')
     }
   })
 })
 
-window.onload = function() {
-  const contentBlocks = document.querySelectorAll('.post-box p'); // substitua .post-box p pelo seletor do seu texto de postagem
-  const seeMoreButtons = document.querySelectorAll('.ler-mais'); // substitua .ler-mais pelo seletor do seu botão "Ler mais"
-  const btn_post1_comentarios = document.querySelectorAll('.post1-comentarios')
-  const thresholdHeight = 500; // substitua 500 pelo seu limite de altura desejado
 
-  // percorre todos os blocos de conteúdo
-  for (let i = 0; i < contentBlocks.length; i++) {
-    // verifica se a altura do conteúdo é menor do que o limite
-    if (contentBlocks[i].offsetHeight < thresholdHeight) {
-      // se for verdade, esconde o botão
-      seeMoreButtons[i].style.display = 'none';
-      btn_post1_comentarios[i].style.display = 'flex';
-
-    } else {
-      // senão, mostra o botão
-      seeMoreButtons[i].style.display = 'block';
-    }
-  }
-};
 
 function abrir_respostas_comentarios()
 {
@@ -342,5 +326,4 @@ function fechar_modal_respostas(event)
     event.stopPropagation()
  
 }
-
 
