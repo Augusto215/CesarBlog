@@ -10,19 +10,7 @@
                     <div class="flex-titulo2">
                         <div class="post-titulo2">
                             <h1>
-                                <a href="{{post.link_popup}}" target="popup" 
-
-                                {%if post.link_popup%}
-                                onclick="
-                                var width = window.innerWidth * 0.86;
-                                var height = window.innerHeight * 0.86;
-                                var left = (window.innerWidth - width) / 2;
-                                var top = (window.innerHeight - height) / 2;
-                                window.open('{{post.link_popup}}', 'popup', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
-                                return false;"
-                                {%endif%}>
-                                    {{post.titulo}}
-                                </a>
+                            {{post.titulo}}
                             </h1>
                             
                         </div>
@@ -39,16 +27,7 @@
                     <div class="post-text">
                         <p class="post-box-p">
                             <a href="{{post.link_popup}}" target="popup" 
-
-                            {%if post.link_popup%}
-                            onclick="
-                            var width = window.innerWidth * 0.86;
-                            var height = window.innerHeight * 0.86;
-                            var left = (window.innerWidth - width) / 2;
-                            var top = (window.innerHeight - height) / 2;
-                            window.open('{{post.link_popup}}', 'popup', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
-                            return false;"
-                            {%endif%}>
+                            onclick="window.open('{{post.link_popup}}', 'popup', 'width=700, height=700'); return false;">
                                 {{post.post|safe}}
                             </a>
                         </p>
@@ -61,14 +40,6 @@
 
                     {% comment %}? COMENTARIO {% endcomment %}
                     <div class="comentario-box">
-                               
-                        <button  class="comentario-box-fechar"  style="
-                       position:absolute; top:0; right:5px; display:none; color:#fff;
-                       background:none; outline:none;  font-size:1.5rem;
-                       border:none; cursor:pointer;" >     
-                            x
-                        </button>
-                    
                         <img src="{% static '/base/img/comment (2).png'%}">
                         <ul class="comentario-arvore">
                         <li>
@@ -133,14 +104,6 @@
         
                             {% comment %}? COMENTARIO {% endcomment %}
                             <div class="comentario-box">
-                               
-                                <button  class="comentario-box-fechar"  style="
-                               position:absolute; top:0; right:5px; display:none; color:#fff;
-                               background:none; outline:none;  font-size:1.5rem;
-                               border:none; cursor:pointer;" >     
-                                    x
-                                </button>
-                            
                                 <img src="{% static '/base/img/comment (2).png'%}">
                                 <ul class="comentario-arvore">
                                 <li>
@@ -184,19 +147,7 @@
                     <div class="flex-titulo2">
                         <div class="post-titulo2">
                             <h1>
-                                <a href="{{post.link_popup}}" target="popup" 
-
-                                {%if post.link_popup%}
-                                onclick="
-                                var width = window.innerWidth * 0.86;
-                                var height = window.innerHeight * 0.86;
-                                var left = (window.innerWidth - width) / 2;
-                                var top = (window.innerHeight - height) / 2;
-                                window.open('{{post.link_popup}}', 'popup', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
-                                return false;"
-                                {%endif%}>
-                                    {{post.titulo}}
-                                </a>
+                            {{post.titulo}}
                             </h1>
                             
                         </div>
@@ -213,13 +164,7 @@
                     <div class="post-text">
                     <p class="post-box-p">
                         <a href="{{post.link_popup}}" target="popup" 
-                        onclick="
-                        var width = window.innerWidth * 0.86;
-                        var height = window.innerHeight * 0.86;
-                        var left = (window.innerWidth - width) / 2;
-                        var top = (window.innerHeight - height) / 2;
-                        window.open('{{post.link_popup}}', 'popup', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
-                        return false;">
+                            onclick="window.open('{{post.link_popup}}', 'popup', 'width=700, height=700'); return false;">
                                 {{post.post|safe}}
                             </a>
                      
@@ -232,14 +177,6 @@
 
                     {% comment %}? COMENTARIO {% endcomment %}
                     <div class="comentario-box">
-                               
-                        <button  class="comentario-box-fechar"  style="
-                       position:absolute; top:0; right:5px; display:none; color:#fff;
-                       background:none; outline:none;  font-size:1.5rem;
-                       border:none; cursor:pointer;" >     
-                            x
-                        </button>
-                    
                         <img class="comentario-box-img" src="{% static '/base/img/comment (2).png'%}">
                         <ul class="comentario-arvore">
                         <li>
@@ -273,20 +210,14 @@
                 </div>
             </div>
         </div>
-       {% comment %}? POST 2 > 590 CHARACTERS {% endcomment %}
+       {% comment %}? POST 2 > 567 CHARACTERS {% endcomment %}
        
-       {%elif post.image.name != '' and post.post|length > 590 %}
-      
+       {%elif post.image.name != '' and post.post|length > 567 %}
 
         <div class="post2">
         <div class="post-container2">
             <div class="div-text1">
-                <div class="post-container2-img {%if post.video%} abrir-post-video{%endif%}"
-                {%if post.video%} onclick="AbrirPostVideo()"{%endif%}>
-
-                    {%if post.video%}
-                    <img class="play-btn" style="width:5rem; height:5rem;border:none !important; box-shadow:none !important;" src="/static/base/img/botaoplay.png">
-                    {%endif%}
+                <div class="post-container2-img">
                     <img src="{{post.image.url}}">
                 </div>
             </div>
@@ -294,19 +225,7 @@
                 <div class="flex-titulo2">
                 <div class="post-titulo2">
                     <h1>
-                        <a href="{{post.link_popup}}" target="popup" 
-
-                        {%if post.link_popup%}
-                        onclick="
-                        var width = window.innerWidth * 0.86;
-                        var height = window.innerHeight * 0.86;
-                        var left = (window.innerWidth - width) / 2;
-                        var top = (window.innerHeight - height) / 2;
-                        window.open('{{post.link_popup}}', 'popup', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
-                        return false;"
-                        {%endif%}>
-                            {{post.titulo}}
-                        </a>
+                    {{post.titulo}}
                     </h1>
                     
                 </div>
@@ -324,13 +243,7 @@
                     <p style="    overflow: hidden;
                     max-height: 8rem;">
                         <a href="{{post.link_popup}}" target="popup" 
-                        onclick="
-                        var width = window.innerWidth * 0.86;
-                        var height = window.innerHeight * 0.86;
-                        var left = (window.innerWidth - width) / 2;
-                        var top = (window.innerHeight - height) / 2;
-                        window.open('{{post.link_popup}}', 'popup', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
-                        return false;">
+                        onclick="window.open('{{post.link_popup}}', 'popup', 'width=700, height=700'); return false;">
                             {{post.post|safe}}
                         </a>
                     </p>
@@ -372,14 +285,6 @@
                             <div class="add-comentario-box" style="display:none;"> <img src="{% static '/base/img/message (1).png'%}">
                             </div>
                             <div class="comentario-box">
-                               
-                                <button  class="comentario-box-fechar"  style="
-                               position:absolute; top:0; right:5px; display:none; color:#fff;
-                               background:none; outline:none;  font-size:1.5rem;
-                               border:none; cursor:pointer;" >     
-                                    x
-                                </button>
-                            
                             <img class="comentario-box-img" src="{% static '/base/img/comment (2).png'%}">
                             <li>
                                 <div class="comentario-parte1"> <span class="comentario-img">
@@ -427,13 +332,6 @@
                     <div class="add-comentario-box" style="display:none;"> <img src="{% static '/base/img/message (1).png'%}">
                     </div>
                     <div class="comentario-box">
-                        <button  class="comentario-box-fechar"  style="
-                        position:absolute; top:0; right:5px; display:none; color:#fff;
-                        background:none; outline:none;  font-size:1.5rem;
-                        border:none; cursor:pointer;" >     
-                             x
-                         </button>
-                     
                     <img class="comentario-box-img" src="{% static '/base/img/comment (2).png'%}">
                     <li>
                         <div class="comentario-parte1"> <span class="comentario-img">
@@ -472,134 +370,9 @@
                 </form>
                 </div>
             </div>
-            <div class="modal-container-video">
-   <div class="modal-video" style="position:relative">
-     <iframe class="responsive-iframe" src="{{post.video}}"  width="100%" height="80%" allow="autoplay"></iframe>
-
-            <button class="fechar-modal-video" style="
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 2rem;
-            height: 2rem;
-            z-index: 999;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            background-color: rgb(54,54,54);
-            font-size: 1.3em;
-            color: #fff;
-            cursor: pointer;
-            box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
-            outline:none;"
-            >x</button>
-             {% comment %}? COMENTARIO {% endcomment %}
-
-             <div class="post2-comentarios">
-                <div class="add-comentario-box"> <img src="{% static '/base/img/message (1).png'%}">
-                </div>
-                <div class="comentario-box">
-                    <button  class="comentario-box-fechar"  style="
-                    position:absolute; top:0; right:5px; display:none; color:#fff;
-                    background:none; outline:none;  font-size:1.5rem;
-                    border:none; cursor:pointer;" >     
-                         x
-                     </button>
-                 
-                <img class="comentario-box-img" src="{% static '/base/img/comment (2).png'%}">
-                <li>
-                    <div class="comentario-parte1"> <span class="comentario-img">
-                        <img src="{% static 'base/img/discord.png'%}">
-                        </span>
-                        <span class="comentario-nome"> 
-                        Thiago Neves
-                        </span>
-                        <span class="comentario-data">10 de Junho
-                        </span> 
-                    </div>
-                    <span> </span>
-                    <span class="comentario-texto">
-                    Kfksalkfaslfkas
-                    fsalkfsalkfsa
-                    flaskf
-                    </span>
-                    <div class="comentario-parte2">
-                        <span class="like"><i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i></span> <span class="dislike"><i class="fa-solid fa-thumbs-down" style="color: #ffffff;"></i></span><span class="comentario-responder">
-                        Responder
-                        </span>
-                    </div>
-                </li>
-                </div>
-         </div>
-      </div>
-   </div>
-   {%if post.video%}
-   
-   <div class="modal-container-video">
-    <div class="modal-video" style="position:relative">
-      <iframe class="responsive-iframe" src="{{post.video}}"  width="100%" height="80%" allow="autoplay"></iframe>
- 
-             <button class="fechar-modal-video" style="
-             position: absolute;
-             top: -15px;
-             right: -15px;
-             width: 2rem;
-             height: 2rem;
-             z-index: 999;
-             border-radius: 50%;
-             border: 2px solid #fff;
-             background-color: rgb(54,54,54);
-             font-size: 1.3em;
-             color: #fff;
-             cursor: pointer;
-             box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
-             outline:none;"
-             >x</button>
-              {% comment %}? COMENTARIO {% endcomment %}
- 
-              <div class="post2-comentarios">
-                 <div class="add-comentario-box"> <img src="{% static '/base/img/message (1).png'%}">
-                 </div>
-                 <div class="comentario-box">
-                    <button  class="comentario-box-fechar"  style="
-                    position:absolute; top:0; right:5px; display:none; color:#fff;
-                    background:none; outline:none;  font-size:1.5rem;
-                    border:none; cursor:pointer;" >     
-                         x
-                     </button>
-                 
-                 <img class="comentario-box-img" src="{% static '/base/img/comment (2).png'%}">
-                 <li>
-                     <div class="comentario-parte1"> <span class="comentario-img">
-                         <img src="{% static 'base/img/discord.png'%}">
-                         </span>
-                         <span class="comentario-nome"> 
-                         Thiago Neves
-                         </span>
-                         <span class="comentario-data">10 de Junho
-                         </span> 
-                     </div>
-                     <span> </span>
-                     <span class="comentario-texto">
-                     Kfksalkfaslfkas
-                     fsalkfsalkfsa
-                     flaskf
-                     </span>
-                     <div class="comentario-parte2">
-                         <span class="like"><i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i></span> <span class="dislike"><i class="fa-solid fa-thumbs-down" style="color: #ffffff;"></i></span><span class="comentario-responder">
-                         Responder
-                         </span>
-                     </div>
-                 </li>
-                 </div>
-          </div>
-       </div>
-    </div>
- </div>
-
-   {%endif%}
-</div>
+            
         </div>
-       
+
 
         {% comment %}? POST 2 {% endcomment %}
         {% else %}
@@ -615,19 +388,7 @@
                 <div class="flex-titulo2">
                 <div class="post-titulo2">
                     <h1>
-                        <a href="{{post.link_popup}}" target="popup" 
-
-                        {%if post.link_popup%}
-                        onclick="
-                        var width = window.innerWidth * 0.86;
-                        var height = window.innerHeight * 0.86;
-                        var left = (window.innerWidth - width) / 2;
-                        var top = (window.innerHeight - height) / 2;
-                        window.open('{{post.link_popup}}', 'popup', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
-                        return false;"
-                        {%endif%}>
-                            {{post.titulo}}
-                        </a>
+                    {{post.titulo}}
                     </h1>
                     
                 </div>
@@ -644,18 +405,9 @@
                 <div class="post-box2">
                     <p>
                         <a href="{{post.link_popup}}" target="popup" 
-
-                            {%if post.link_popup%}
-                            onclick="
-                            var width = window.innerWidth * 0.86;
-                            var height = window.innerHeight * 0.86;
-                            var left = (window.innerWidth - width) / 2;
-                            var top = (window.innerHeight - height) / 2;
-                            window.open('{{post.link_popup}}', 'popup', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
-                            return false;"
-                            {%endif%}>
-                                {{post.post|safe}}
-                            </a>
+                        onclick="window.open('{{post.link_popup}}', 'popup', 'width=700, height=700'); return false;">
+                            {{post.post|safe}}
+                        </a>
                     </p>
                     <div class="ler-mais-div2">
                 
@@ -672,14 +424,6 @@
                     <div class="add-comentario-box" style="display:none;"> <img src="{% static '/base/img/message (1).png'%}">
                     </div>
                     <div class="comentario-box">
-                               
-                        <button  class="comentario-box-fechar"  style="
-                       position:absolute; top:0; right:5px; display:none; color:#fff;
-                       background:none; outline:none;  font-size:1.5rem;
-                       border:none; cursor:pointer;" >     
-                            x
-                        </button>
-                    
                     <img class="comentario-box-img" src="{% static '/base/img/comment (2).png'%}">
                     <li>
                         <div class="comentario-parte1"> <span class="comentario-img">
@@ -723,13 +467,6 @@
         
         {% endif %}
     {% endfor %}
-    {% for audio in audios %}
-    <div class="audio-container" style="width:100%; display:flex; justify-content:center;
-    margin:4rem auto -2rem; flex-direction:column;">
-    <h1 style="margin: 2rem auto -2rem;  text-align:left; width:85%; ">{{audio.titulo}}</h1>
-    <iframe class="embed-audio" style="background-color:#000 !important; border-radius:12px; width:85%; margin:2rem auto;" src="{{audio.audio}}" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-{% endfor %}
     <iframe style="border-radius:12px; width:85%; margin:2rem auto;" src="https://open.spotify.com/embed/show/4J4dvqK0uOyqXhwRgHImV0?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
       <div class="ver-mais-a">
@@ -814,7 +551,63 @@ Conteúdo da postagem
 </div>
 </div>
 </div>
+<div class="modal-container-video">
+   <div class="modal-video" style="position:relative">
+     <iframe class="responsive-iframe" src="https://drive.google.com/file/d/16BfCjHK6gabcMnzqudmMvPStLQDLoM-a/preview"  width="640" height="480" allow="autoplay">
+           
+           
+            </iframe>
 
+            <button class="fechar-modal-video" style="
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 2rem;
+            height: 2rem;
+            z-index: 999;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background-color: rgb(54,54,54);
+            font-size: 1.3em;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+            outline:none;"
+            >x</button>
+             {% comment %}? COMENTARIO {% endcomment %}
+
+             <div class="post2-comentarios">
+                <div class="add-comentario-box"> <img src="{% static '/base/img/message (1).png'%}">
+                </div>
+                <div class="comentario-box">
+                <img class="comentario-box-img" src="{% static '/base/img/comment (2).png'%}">
+                <li>
+                    <div class="comentario-parte1"> <span class="comentario-img">
+                        <img src="{% static 'base/img/discord.png'%}">
+                        </span>
+                        <span class="comentario-nome"> 
+                        Thiago Neves
+                        </span>
+                        <span class="comentario-data">10 de Junho
+                        </span> 
+                    </div>
+                    <span> </span>
+                    <span class="comentario-texto">
+                    Kfksalkfaslfkas
+                    fsalkfsalkfsa
+                    flaskf
+                    </span>
+                    <div class="comentario-parte2">
+                        <span class="like"><i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i></span> <span class="dislike"><i class="fa-solid fa-thumbs-down" style="color: #ffffff;"></i></span><span class="comentario-responder">
+                        Responder
+                        </span>
+                    </div>
+                </li>
+                </div>
+         </div>
+      </div>
+   </div>
+</div>
 <div class="modal-main-ler-respostas">
     <div class="modal-ler-respostas">
         <button onclick="fechar_modal_respostas(event)" class="fechar-modal-ler-respostas">
@@ -886,17 +679,5 @@ Conteúdo da postagem
 <script src="https://fast.wistia.com/embed/medias/tq05i69fjl.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
 <script src="{% static 'base/js/app.js' %}"></script>
 
-
-
-<script>
-const audioIframe = docuent.querySelector('#embed-audio');
-
-function changeStuff () {
-    const audioIframeWindow = audioIframe.contentWindow;
-    const audioDocument = audioIframe.contentDocument;
-
-    audioIframe.body.style.backgroundColor = "#000";
-}
-</script>
 
 {% endblock  %}

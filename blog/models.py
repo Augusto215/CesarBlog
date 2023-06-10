@@ -14,6 +14,7 @@ class Post(models.Model):
     video = models.URLField(blank=True, null=True)
     font = models.CharField(max_length=100, blank=True, null=True)
     link_fonte = models.URLField(blank=True, null=True)
+    link_popup = models.URLField(blank=True, null=True)
     post = models.TextField(max_length=100000, blank=False, null=False)
     data = models.DateTimeField(default = datetime.now)
     
@@ -21,7 +22,15 @@ class Post(models.Model):
         return self.titulo
     
     
-
+class Audio(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete = models.CASCADE)
+    titulo = models.CharField(max_length=255, null=True, blank=True)
+    audio = models.URLField(blank=True, null=True)
+    data = models.DateTimeField(default = datetime.now)
+    
+    def __str__(self) -> str:
+        return self.titulo
+    
 class Comentarios(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete = models.CASCADE)
     comentario = models.TextField()

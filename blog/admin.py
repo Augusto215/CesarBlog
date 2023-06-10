@@ -9,6 +9,12 @@ class ComentariosEmLinhas(admin.StackedInline):
    
 class PostAdmin(admin.ModelAdmin):
     inlines = [ComentariosEmLinhas, ]
-    
+
+
+class AudioAdmin(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Resposta)
+admin.site.register(Audio, AudioAdmin)

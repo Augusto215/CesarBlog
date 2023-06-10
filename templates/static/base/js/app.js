@@ -3,6 +3,9 @@ let post_box = document.querySelectorAll(".post-box");
 const nav = document.querySelector(".nav");
 const logo = document.querySelector('.cesar');
 const logoImg = document.querySelector('#logo-img');
+let comentarioBoxImg = document.querySelectorAll('.comentario-box-img');
+let addComentarioImg = document.querySelectorAll('.add-comentario-img');
+let inputButton = document.querySelectorAll('.input-comentario-submit')
 const post_sub = document.querySelectorAll('.post-subtitulo');
 const night_button = document.querySelector('.button');
 const hamburger = document.querySelector('.hamburger');
@@ -31,7 +34,7 @@ const modal_resposta_fechar = document.querySelector('.modal-resposta-fechar')
 const modal_add_comentario = document.querySelector('.modal-add-comentario')
 let post_container2_img = document.querySelectorAll('.post-container2-img')
 const fechar_modal_comentario = document.querySelector('.fechar_modal_comentario')
-const modal_container_video = document.querySelectorAll('.modal-container-video')
+let modal_container_video = document.querySelectorAll('.modal-container-video')
 let comentario_text = document.querySelectorAll(".post-box-p")
 let post_text = document.querySelectorAll('.post-text')
 const fechar_modal_video = document.querySelectorAll('.fechar-modal-video')
@@ -40,7 +43,16 @@ let post1_container = document.querySelectorAll('.post-container')
 let post1_comentarios = document.querySelectorAll('.post1-comentarios')
 let comentario_ver_respostas = document.querySelectorAll('.comentarios-respostas')
 const modal_main_respostas = document.querySelector('.modal-main-ler-respostas')
-const iframe = document.querySelector('.responsive-iframe')
+let iframe = document.querySelectorAll('.responsive-iframe')
+let lerMais2 = document.querySelectorAll('.ler-mais2')
+let postLerMais2 = document.querySelectorAll('.post2-ler-mais')
+let postLerMais1 = document.querySelectorAll('.post1-ler-mais')
+let post2FecharModal = document.querySelectorAll('.post2-fechar_modal')
+let post1FecharModal = document.querySelectorAll('.post1-fechar_modal')
+let AbrirPostVideo = document.querySelectorAll('.abrir-post-video')
+let comentarioFechar = document.querySelectorAll('.comentario-box-fechar')
+
+
 
 
 
@@ -58,8 +70,27 @@ function toggleNightMode(sliders) {
 
   if (logoImg.getAttribute('src') === "/static/base/img/site(logo).png") {
     logoImg.setAttribute('src', "/static/base/img/logo(escuro).png");
+    inputButton.forEach((input) =>
+    {
+      input.style.backgroundImage = 'url("/static/base/img/enviar(escuro).png")'
+    })
+   
+    
+    comentarioBoxImg.forEach((img) =>
+    {
+      img.setAttribute('src', "/static/base/img/comentario(escuro).png" )
+    });
+
 } else {
     logoImg.setAttribute('src', "/static/base/img/site(logo).png");
+    comentarioBoxImg.forEach((img) =>
+    {
+      img.setAttribute('src', "/static/base/img/comment (2).png" )
+    });
+    inputButton.forEach((input) =>
+    {
+      input.style.backgroundImage = 'url("/static/base/img/enviar(claro).png")'
+    })
 }
 
   nav_mobile.classList.toggle("nav-mobile-night");
@@ -202,11 +233,11 @@ document.body.addEventListener("click", function() {
  
 });
 
-comentario_box.forEach((comentario) => {
+comentario_box.forEach((comentario, index) => {
   comentario.addEventListener("click", function(event) {
     event.stopPropagation();
     this.classList.add('is-active');
-
+    comentarioFechar[index].classList.add('is-active')
     input_comentario.forEach((input) => {
       input.classList.remove('is-active');
     });
@@ -237,22 +268,12 @@ modal_main_resposta.addEventListener("click", function(event) {
     this.classList.remove('is-active');
   }
 });
+
 ler_mais.forEach((ler, index) => {
   ler.addEventListener("click", function(event) {
     event.stopPropagation();
     console.log("ativo");
-    post_text[index].scrollTop = 0
-    post1_comentarios[index].classList.toggle('is-active')
-    post1_container[index].classList.toggle('is-active')
-    post_box[index].classList.toggle('is-active') 
-    if(post_box[index].classList.contains('is-active'))
-    {
-      ler.innerText = 'Ler menos...'
-    }
-    else
-    {
-      ler.innerText = 'Ler mais...'
-    }
+    postLerMais1[index].classList.add('is-active')
 
   });
 });
@@ -279,40 +300,30 @@ fechar_modal_comentario.addEventListener("click", function(event)
   modal_add_comentario.classList.remove('is-active');
 })
 
-post_container2_img.forEach((post, index) =>
-{
-  post.addEventListener("click", function(event)
-  {
-    event.stopPropagation();
-    console.log("clicado");
-    modal_container_video[index].classList.add('is-active');
-  })
-})
+
 fechar_modal_video.forEach((fechar, index)=>
 {
   fechar.addEventListener("click", function(event)
   {
     event.stopPropagation()
     modal_container_video[index].classList.remove('is-active')
+    iframe[index].setAttribute('src', iframe[index].getAttribute('src'));
    
   }
   
 )
 })
 
-modal_container_video.forEach((modal) =>
-{
-  modal.addEventListener("click", function(event)
-  {
+modal_container_video.forEach((modal, index) => {
+  modal.addEventListener("click", function(event) {
     event.stopPropagation();
-    if(event.target === modal)
-    {
-      iframe.setAttribute('src', iframe.getAttribute('src'));
-      this.classList.remove('is-active')
+    if(event.target === modal) {
+      modal.classList.remove('is-active');
+      iframe[index].setAttribute('src', iframe[index].getAttribute('src'));
+    
     }
   })
 })
-
 
 
 function abrir_respostas_comentarios()
@@ -327,3 +338,68 @@ function fechar_modal_respostas(event)
  
 }
 
+lerMais2.forEach((ler, index) =>
+{
+  ler.addEventListener("click", function(event)
+  {
+    postLerMais2[index].classList.add('is-active')
+  })
+})
+
+postLerMais2.forEach((post) =>
+post.addEventListener("click", function(event)
+{
+  if(event.target === post)
+  {
+    post.classList.remove('is-active')
+  }
+}))
+
+post2FecharModal.forEach((post, index) => 
+{
+  post.addEventListener("click", function(event)
+  {
+    event.stopPropagation()
+    postLerMais2[index].classList.remove('is-active')
+
+  })
+})
+
+postLerMais1.forEach((post) =>
+post.addEventListener("click", function(event)
+{
+  if(event.target === post)
+  {
+    post.classList.remove('is-active')
+  }
+}))
+
+post1FecharModal.forEach((post, index) => 
+{
+  post.addEventListener("click", function(event)
+  {
+    event.stopPropagation()
+    postLerMais1[index].classList.remove('is-active')
+
+  })
+})
+
+AbrirPostVideo.forEach((abrir, index) =>
+{
+  abrir.addEventListener("click", function(event)
+  {
+    event.stopPropagation();
+    modal_container_video[index].classList.add('is-active')
+  })
+})
+comentarioFechar.forEach((fechar, index) =>
+{
+  fechar.addEventListener("click", function(event)
+  {
+    event.stopPropagation();
+    comentario_box.forEach((comentario) =>
+    {
+      comentario.classList.remove('is-active')
+    })
+  })
+})

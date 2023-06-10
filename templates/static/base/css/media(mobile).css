@@ -78,8 +78,9 @@
 {
    
     justify-content: center;
-    width:50%;
-    max-width: 14rem;
+    max-width:14rem;
+   
+    
 
 }
 .div-text1
@@ -199,5 +200,19 @@
 {
    font-size:1em;
 }
-
+.flex-titulo2
+{
+    justify-content:center !important;
+    margin:auto;
+    display:block !important;
+}
+.post2-comentarios .add-comentario-box
+{
+    display:flex !important;
+}
+.post .comentario-box.is-active
+{
+    bottom:-3rem !important;
+    
+}
 }

@@ -1,8 +1,25 @@
 @import url('https://fonts.cdnfonts.com/css/nexa-bold');
-@font-face
-{
-  font-family:'myFont';
-  src:url(/static/base/fonts/ufonts.com_american-typewriter-condensed-bold.ttf) format('ttf');
+@font-face {
+  font-family:'AmericanTypeWriterCondensed';
+  src: url("/static/base/fonts/ufonts.com_american-typewriter-condensed.ttf") format('truetype');
+}
+@font-face {
+  font-family:'AmericanTypeWriterBold';
+  src: url("/static/base/fonts/ufonts.com_american-typewriter-bold.ttf") format('truetype');
+}
+@font-face {
+  font-family:'AmericanTypeWriterCondensedLight';
+  src: url("/static/base/fonts/ufonts.com_american-typewriter-condensed-light.ttf") format('truetype');
+}
+
+@font-face {
+  font-family:'AmericanTypeWriterLight';
+  src: url("/static/base/fonts/ufonts.com_american-typewriter-light.ttf") format('truetype');
+}
+
+@font-face {
+  font-family:'AmericanTypeWriter';
+  src: url("/static/base/fonts/ufonts.com_american-typewriter.ttf") format('truetype');
 }
 
 *
@@ -10,6 +27,7 @@
     box-sizing: border-box;
     margin:0;
     padding: 0;
+    font-family:'Nexa', sans-serif;
     
     
   
@@ -440,6 +458,7 @@ input:checked + .slider:before {
 .modal-night form label
 {
   font-weight: 600;
+
 }
 .modal-night .fechar_modal
 {
@@ -607,7 +626,7 @@ form input
 form label
 {
   justify-content: left;
-  font-size: .9rem;
+  font-size: .8rem;
   width:60%;
   display: flex;
   margin-top: 1rem;
@@ -805,5 +824,16 @@ button.fechar_modal_comentario
   display:flex;
   top:0;
   left:0;
+  
+}
+a 
+{
+  text-decoration:none;
+  color: #fff;
+
+}
+.body-night a 
+{
+  color:#000;
   
 }

@@ -7,10 +7,12 @@ from .models import *
 def home(request):
     post = Post.objects.order_by("-data")
     redes_sociais = Contato.objects.all()
+    audios = Audio.objects.order_by("-data")
     
     context = {
     'post':post,
-    'redes_sociais':redes_sociais
+    'redes_sociais':redes_sociais,
+    'audios': audios
     }
 
     return render(request, 'blog/cesar.html', context)
